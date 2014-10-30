@@ -3,8 +3,11 @@ Title: Link Prediction Methods
 Version: 0.1
 Authors@R: c( person("Michal", "Bojanowski", email="michal2992@gmail.com",
     role="aut"), person("Bartosz", "Chrol",
-    email="bchrol@gmail.com", role=c("aut", "cre")))
+    email="bartek.chrol@gmail.com", role=c("aut", "cre")))
 Description: Methods for link prediction in graphs
-Depends: R (>= 3.1.1)
+Depends:
+    R (>= 3.1.1),
 License: GPL-2
 LazyData: true
+Imports:
+    igraph
