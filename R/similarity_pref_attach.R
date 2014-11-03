@@ -8,7 +8,7 @@
 #'   vertices. It is a similarity measure under assumption that the most similar
 #'   vertices are simulataneously the most probable to be connected.
 #'
-#' @param graph Igraph object.
+#' @template sim
 #'
 #' @return A square numeric matrix with size equal to the number of vertices
 #'   in the input graph.
