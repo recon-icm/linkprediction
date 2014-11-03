@@ -7,7 +7,7 @@
 #'
 #' @seealso \code{\link[devtools]{document}}
 #'
-#' @param graph Igraph object.
+#' @template sim
 #'
 #' @return A square numeric matrix with size equal to the number of vertices
 #'   in the input graph
