@@ -6,7 +6,7 @@
 similarity_distance(graph)
 }
 \arguments{
-\item{graph}{Igraph object.}
+\item{graph}{an object of class igraph}
 }
 \value{
 A square numeric matrix with size equal to the number of vertices

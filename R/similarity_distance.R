@@ -9,7 +9,7 @@
 #'   of vertices in the graph plus one. Distances are inversed afterwards, so as
 #'   two vertices are more similar when the distances between them is shorter.
 #'
-#' @param graph Igraph object.
+#' @template sim
 #'
 #' @return A square numeric matrix with size equal to the number of vertices
 #'   in the input graph.

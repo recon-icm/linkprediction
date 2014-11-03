@@ -5,12 +5,12 @@
 #' This function counts the number of common neighbours weighted by the inverse
 #' of their degrees.
 #'
-#' @seealso \code{\link[devtools]{document}}
-#'
 #' @template sim
 #'
 #' @return A square numeric matrix with size equal to the number of vertices
 #'   in the input graph
+#'
+#' @seealso \code{\link[igraph]{similarity}}
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)

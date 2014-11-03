@@ -6,7 +6,7 @@
 similarity_resource_allocation(graph)
 }
 \arguments{
-\item{graph}{Igraph object.}
+\item{graph}{an object of class igraph}
 }
 \value{
 A square numeric matrix with size equal to the number of vertices
@@ -24,6 +24,6 @@ g <- igraph::random.graph.game(20, 0.3)
 similarity_resource_allocation(g)
 }
 \seealso{
-\code{\link[devtools]{document}}
+\code{\link[igraph]{similarity}}
 }
 
