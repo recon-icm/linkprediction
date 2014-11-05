@@ -11,23 +11,17 @@
 #'
 #' @template sim
 #'
-#' @return A square numeric matrix with size equal to the number of vertices
-#'   in the input graph.
-#'
-#' @seealso \code{\link[igraph]{similarity}}
-#'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_distance(g)
 #'
 #' @export
-#' @importFrom igraph shortest.paths
-#' @importFrom igraph vcount
+
 
 
 similarity_distance <- function(graph){
-  score <- shortest.paths(graph)
-  score[is.infinite(score)] <- vcount(graph) + 1
+  score <- igraph::shortest.paths(graph)
+  score[is.infinite(score)] <- igraph::vcount(graph) + 1
   # maybe infinity here ?
   score <- 1 / score
   diag(score) <- 0

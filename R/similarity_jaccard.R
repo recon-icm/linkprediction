@@ -2,8 +2,9 @@
 #'
 #' Similarity measure counting the proportion of shared nodes.
 #'
-#' This is a simple wrapper to an \code{igraph} function \code{similarity.jaccard},
-#'   which calculates the proportion of shared neighbors of two vertices.
+#' This is a simple wrapper to an \pkg{igraph} function
+#'   \code{\link[igraph]{similarity.jaccard}}, which calculates the proportion
+#'   of shared neighbors of two vertices.
 #'
 #' @template sim
 #'

@@ -2,7 +2,7 @@
 #'
 #' Similarity measure counting number of common neighbors.
 #'
-#' This is a simple wrapper to an \code{igraph} function \code{cocitation},
+#' This is a simple wrapper to an \pkg{igraph} function \code{cocitation},
 #'   which counts the number of neighbours shared by two vertices.
 #'
 #' @template sim

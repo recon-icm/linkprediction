@@ -3,11 +3,11 @@
 #' Recursive similarity measure based on all paths in a graph
 #'
 #' This function calculates vertex similarity based on the concept, that two
-#'   nodes are similar, when their neighbors are similar. Smaller \theta assings
-#'   more weight on shorter paths (closer neighbors are more important).
+#'   nodes are similar, when their neighbors are similar. Smaller \eqn{\theta}
+#'   assings more weight on shorter paths (closer neighbors are more important).
 #'
 #' @template sim
-#' @param \theta damping factor
+#' @param theta damping factor
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)

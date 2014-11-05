@@ -19,7 +19,6 @@ similarity_act <- function(graph){
   n <- igraph::vcount(graph)
   m <- igraph::ecount(graph)
 
-  ncore <- sum(core)
   L_psinv <- solve(L - 1/n) + 1/n
   score <- 2 * m * (diag(L_psinv) %*% t(rep(1, n)) +
                       rep(1, n) %*% t(diag(L_psinv)) -

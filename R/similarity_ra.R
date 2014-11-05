@@ -1,4 +1,4 @@
-#' Similarity measure.
+#' Resource allocation vertex similarity
 #'
 #' Similarity measure based on resource allocation process.
 #'
@@ -7,29 +7,20 @@
 #'
 #' @template sim
 #'
-#' @return A square numeric matrix with size equal to the number of vertices
-#'   in the input graph
-#'
-#' @seealso \code{\link[igraph]{similarity}}
-#'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_resource_allocation(g)
 #'
 #' @export
-#' @importFrom igraph vcount
-#' @importFrom igraph neighborhood
-#' @importFrom igraph degree
-
 
 similarity_resource_allocation <- function(graph){
-  n <- vcount(graph)
+  n <- igraph::vcount(graph)
   score <- matrix(integer(n^2), nrow = n)
 
-  neighbors <- neighborhood(graph, 1)
+  neighbors <- igraph::neighborhood(graph, 1)
   neighbors <- lapply(neighbors, function(x) x[-1])
 
-  degrees <- degree(graph)
+  degrees <- igraph::degree(graph)
   ## inverse map
   #invmap <- match(seq_along(neighbors), vertices_index)
   for (k in seq(n)){

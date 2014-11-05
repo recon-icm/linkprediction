@@ -9,14 +9,14 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_leicht_holme_newman(g)
+#' similarity_lhn_local(g)
 #'
 #' @export
 
-similarity_leicht_holme_newman <- function(graph){
+similarity_lhn_local <- function(graph){
   deg <- igraph::degree(graph)
 
-  score <- cocitation(graph)
+  score <- igraph::cocitation(graph)
   score <- score / outer(deg, deg)
   score
 }
