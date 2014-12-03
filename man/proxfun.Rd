@@ -25,14 +25,46 @@ General function for calculating nodes' proximity in a graph
 This function calculates vertex proximity (similarity) with selected method
   and between selected vertices.
 
-Available methods are:
-\itemize{
-  \item \code{act} average commute time
-  \item \code{act_n} normalized average commute time
-  \item \code{aa} Adamic-Adar index
-  \item \code{cn} common neighbours
-  \item \code{cos} cosine similarity
-  \item ...
-  }
+Following methods are available:
+
+ \code{act} average commute time
+
+ \code{act_n} normalized average commute time
+
+ \code{aa} Adamic-Adar index
+
+ \code{cn} common neighbours
+
+ \code{cos} cosine similarity
+
+ \code{cos_l} cosine similarity on L+
+
+ \code{dist} graph distance
+
+ \code{hdi} Hub Depressed Index
+
+ \code{hpi} Hub Promoted Index
+
+ \code{jaccard} Jaccard coefficient
+
+ \code{katz} Katz index
+
+ \code{l} L+ directly
+
+ \code{lhn_local} Leicht-Holme-Newman Index
+
+ \code{lhn_global} Leicht-Holme-Newman Index global version
+
+ \code{lp} Local Path Index
+
+ \code{mf} Matrix Forest Index
+
+ \code{pa} preferential attachment
+
+ \code{ra} resource allocation
+
+ \code{rwr} random walk with restart
+
+ \code{sor} sorensen index/ dice coefficient
 }
 

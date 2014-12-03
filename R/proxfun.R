@@ -11,15 +11,48 @@
 #'   character is treated as names, numeric as ids
 #' @param ... additional arguments specific for a selected method
 #'
-#' @details Available methods are:
-#' \itemize{
-#'   \item \code{act} average commute time
-#'   \item \code{act_n} normalized average commute time
-#'   \item \code{aa} Adamic-Adar index
-#'   \item \code{cn} common neighbours
-#'   \item \code{cos} cosine similarity
-#'   \item ...
-#'   }
+#' @details Following methods are available:
+#'
+#'  \code{act} average commute time
+#'
+#'  \code{act_n} normalized average commute time
+#'
+#'  \code{aa} Adamic-Adar index
+#'
+#'  \code{cn} common neighbours
+#'
+#'  \code{cos} cosine similarity
+#'
+#'  \code{cos_l} cosine similarity on L+
+#'
+#'  \code{dist} graph distance
+#'
+#'  \code{hdi} Hub Depressed Index
+#'
+#'  \code{hpi} Hub Promoted Index
+#'
+#'  \code{jaccard} Jaccard coefficient
+#'
+#'  \code{katz} Katz index
+#'
+#'  \code{l} L+ directly
+#'
+#'  \code{lhn_local} Leicht-Holme-Newman Index
+#'
+#'  \code{lhn_global} Leicht-Holme-Newman Index global version
+#'
+#'  \code{lp} Local Path Index
+#'
+#'  \code{mf} Matrix Forest Index
+#'
+#'  \code{pa} preferential attachment
+#'
+#'  \code{ra} resource allocation
+#'
+#'  \code{rwr} random walk with restart
+#'
+#'  \code{sor} sorensen index/ dice coefficient
+#'
 #'
 #' @return matrix
 #'
@@ -38,6 +71,9 @@ proxfun <- function(graph, method, v1 = NULL, v2 = v1, ...){
 
 
 match_method <- function(method){
-  method <- match.arg(method, c("act", "act_n", "aa", "cn"))
+  method <- match.arg(method, c("act", "act_n", "aa", "cn", "cos", "cos_l",
+                                "dist", "hdi", "hpi", "jaccard", "katz", "l",
+                                "lhn_local", "lhn_global", "lp", "mf", "pa", "ra",
+                                "rwr", "sor"))
   paste0("similarity_", method)
 }
