@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_resource_allocation(g)
+#' similarity_ra(g)
 #'
 #' @export
 
-similarity_resource_allocation <- function(graph){
+similarity_ra <- function(graph){
   n <- igraph::vcount(graph)
   score <- matrix(integer(n^2), nrow = n)
 

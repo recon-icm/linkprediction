@@ -10,11 +10,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_matrix_forest(g)
+#' similarity_mf(g)
 #'
 #' @export
 
-similarity_matrix_forest <- function(graph){
+similarity_mf <- function(graph){
   L <- igraph::graph.laplacian(graph)
   n <- igraph::vcount(graph)
 

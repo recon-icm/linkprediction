@@ -10,11 +10,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_adamic_adar(g)
+#' similarity_aa(g)
 #'
 #' @export
 
-similarity_adamic_adar <- function(graph){
+similarity_aa <- function(graph){
   score <- igraph::similarity.invlogweighted(graph)
   score
 }

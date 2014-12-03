@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_cosineL(g)
+#' similarity_cos_l(g)
 #'
 #' @export
 
-similarity_cosineL <- function(graph){
+similarity_cos_l <- function(graph){
   L <- igraph::graph.laplacian(graph)
   n <- igraph::vcount(graph)
   m <- igraph::ecount(graph)

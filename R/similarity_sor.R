@@ -10,11 +10,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_sorensen(g)
+#' similarity_sor(g)
 #'
 #' @export
 
-similarity_sorensen <- function(graph){
+similarity_sor <- function(graph){
   score <- igraph::similarity.dice(graph)
   score
 }

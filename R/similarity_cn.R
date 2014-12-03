@@ -10,11 +10,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_common_neighbors(g)
+#' similarity_cn(g)
 #'
 #' @export
 
-similarity_common_neighbors <- function(graph){
+similarity_cn <- function(graph){
   score <- igraph::cocitation(graph)
   score
 }

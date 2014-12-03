@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_cosine(g)
+#' similarity_cos(g)
 #'
 #' @export
 
-similarity_cosine <- function(graph){
+similarity_cos <- function(graph){
   deg <- igraph::degree(graph)
 
   score <- igraph::cocitation(graph)

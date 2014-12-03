@@ -12,11 +12,11 @@
 #'
 #' @examples
 #' g <- igraph::barabasi.game(20)
-#' similarity_pref_attach(g)
+#' similarity_pa(g)
 #'
 #' @export
 
-similarity_pref_attach <- function(graph){
+similarity_pa <- function(graph){
   deg <- igraph::degree(graph)
   score <- outer(deg, deg)
   diag(score) <- 0

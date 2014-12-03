@@ -13,13 +13,13 @@
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_distance(g)
+#' similarity_dist(g)
 #'
 #' @export
 
 
 
-similarity_distance <- function(graph){
+similarity_dist <- function(graph){
   score <- igraph::shortest.paths(graph)
   score[is.infinite(score)] <- igraph::vcount(graph) + 1
   # maybe infinity here ?
