@@ -5,10 +5,13 @@
 #' This function calculates vertex proximity (similarity) with selected method
 #'   and between selected vertices.
 #'
-#' @param graph an object of class igraph
+#' @param graph an object of class \code{igraph} or \code{network}
 #' @param method a method (single string) for calculating similarities, see Details
 #' @param v1,v2 vectors of vertices between which similarity will be calculated
 #'   character is treated as names, numeric as ids
+#' @param value a character string giving a type of the object that should be
+#'  returned. This must be on of "\code{matrix}", "\code{graph}" or
+#'  "\code{edgelist}", with default "\code{matrix}".
 #' @param ... additional arguments specific for a selected measure
 #'
 #' @details Following methods are available:
@@ -58,7 +61,7 @@
 #'
 #' @export
 
-proxfun <- function(graph, method, v1 = NULL, v2 = v1, ...){
+proxfun <- function(graph, ...){
   UseMethod("proxfun")
 }
 
@@ -66,7 +69,7 @@ proxfun <- function(graph, method, v1 = NULL, v2 = v1, ...){
 #' @method proxfun igraph
 #' @export
 #' @rdname proxfun
-proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, ...){
+proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...){
 
   # find method
   method <- match_method(method)
@@ -83,9 +86,9 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, ...){
 #' @method proxfun network
 #' @export
 #' @rdname proxfun
-proxfun.network <- function(graph, ...){
+proxfun.network <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...){
   graph <- intergraph::asIgraph(graph)
-  proxfun.igraph(graph, ...)
+  proxfun.igraph(graph, method = method , v1 = v1, v2 = v2, value = value, ...)
 }
 
 
