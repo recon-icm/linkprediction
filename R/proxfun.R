@@ -68,9 +68,13 @@ proxfun <- function(graph, method, v1 = NULL, v2 = v1, ...){
 #' @rdname proxfun
 proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, ...){
 
-
-
+  # find method
   method <- match_method(method)
+
+  # check vertices lists
+  v1 <- check_vertices(graph, v1)
+  v2 <- check_vertices(graph, v2)
+
   result <- do.call(method, list(graph = graph, ...))
   result
 }
@@ -87,11 +91,31 @@ proxfun.network <- function(graph, ...){
 
 
 
-## additional function for matching methods
+## function for matching methods
 match_method <- function(method){
   method <- match.arg(method, c("act", "act_n", "aa", "cn", "cos", "cos_l",
                                 "dist", "hdi", "hpi", "jaccard", "katz", "l",
                                 "lhn_local", "lhn_global", "lp", "mf", "pa", "ra",
                                 "rwr", "sor"))
   paste0("similarity_", method)
+}
+
+
+
+## function checking correctness of vertices list
+check_vertices <- function(graph, v){
+  if (is.null(v)){
+    return(seq_along(igraph::V(graph)))
+  } else if (is.numeric(v)){
+    v <- as.integer(v)
+    if (min(v) < 0 | max(v) > igraph::vcount(graph))
+      stop("Vertex id out of range")
+    v
+  } else if (is.character(v)){
+    if (!igraph::is.named(graph))
+      stop("Graph does not have vertex names. Provide vertex IDs")
+    if (!all(v %in% igraph::V(graph)$name))
+      stop("Invalid vertex names")
+    v
+  } else stop("Vertex sequence must be numeric or character")
 }
