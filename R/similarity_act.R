@@ -1,4 +1,4 @@
-#' Averag Commute Time
+#' Average Commute Time
 #'
 #' Similarity measure based on random walker
 #'

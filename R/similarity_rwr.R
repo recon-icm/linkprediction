@@ -9,6 +9,7 @@
 #'   fixed probability \eqn{\alpha}.
 #'
 #' @template sim
+#' @param alpha probability of return of random walker
 #'
 #' @examples
 #' g <- igraph::random.graph.game(20, 0.3)
@@ -17,7 +18,7 @@
 #' @export
 
 similarity_rwr <- function(graph, alpha = 0.3){
-  P <- igraph::get.stochastic(graph)
+  P <- as.matrix(igraph::get.stochastic(graph))
   score <- solve(diag(nrow(P)) - (1 - alpha) * t(P))
   score <- score * alpha
   score <- score + t(score)
