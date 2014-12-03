@@ -9,7 +9,7 @@
 #' @param method a method (single string) for calculating similarities, see Details
 #' @param v1,v2 vectors of vertices between which similarity will be calculated
 #'   character is treated as names, numeric as ids
-#' @param ... additional arguments specific for a selected method
+#' @param ... additional arguments specific for a selected measure
 #'
 #' @details Following methods are available:
 #'
@@ -54,22 +54,40 @@
 #'  \code{sor} sorensen index/ dice coefficient
 #'
 #'
-#' @return matrix
+#' @return matrix or edgelist or, if sets of vertices are full, an igraph
 #'
 #' @export
 
 proxfun <- function(graph, method, v1 = NULL, v2 = v1, ...){
-  if (!inherits(graph, "igraph")) stop("A graph must be of class igraph")
+  UseMethod("proxfun")
+}
+
+
+#' @method proxfun igraph
+#' @export
+#' @rdname proxfun
+proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, ...){
+
+
 
   method <- match_method(method)
   result <- do.call(method, list(graph = graph, ...))
+  result
+}
 
 
-
+#' @method proxfun network
+#' @export
+#' @rdname proxfun
+proxfun.network <- function(graph, ...){
+  graph <- intergraph::asIgraph(graph)
+  proxfun.igraph(graph, ...)
 }
 
 
 
+
+## additional function for matching methods
 match_method <- function(method){
   method <- match.arg(method, c("act", "act_n", "aa", "cn", "cos", "cos_l",
                                 "dist", "hdi", "hpi", "jaccard", "katz", "l",
