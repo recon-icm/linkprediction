@@ -16,11 +16,11 @@
 #'
 #' @details Following methods are available:
 #'
+#'  \code{aa} Adamic-Adar index
+#'
 #'  \code{act} average commute time
 #'
 #'  \code{act_n} normalized average commute time
-#'
-#'  \code{aa} Adamic-Adar index
 #'
 #'  \code{cn} common neighbours
 #'
@@ -57,7 +57,21 @@
 #'  \code{sor} sorensen index/ dice coefficient
 #'
 #'
-#' @return matrix or edgelist or, if sets of vertices are full, an igraph
+#' @return If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
+#'   \code{length(v2)} with \code{rownames} and \code{colnames} equal to
+#'   \code{v1} and \code{v2} respectively.
+#'   If \code{value = "edgelist"} a \code{data.frame} with three columns:
+#'   \describe{
+#'     \item{from}{ID of a start node of an edge}
+#'     \item{to}{ID of an end node of an edge}
+#'     \item{value}{similarity score for that edge}
+#'     }
+#'   Edges with similarity score 0 are omitted.
+#'   If \code{value = "graph"} an object of class \code{igraph} or \code{network},
+#'   depending on the class of input graph. Returned graph has the same structure
+#'   (graph and node attributes, etc.) as the input graph, except for edges -
+#'   original edges are skipped, and new edges with positive similarity score
+#'   are added. Edged attribute "weight" indicates similarity score.
 #'
 #' @export
 
@@ -69,7 +83,10 @@ proxfun <- function(graph, ...){
 #' @method proxfun igraph
 #' @export
 #' @rdname proxfun
-proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...){
+proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
+                           value =c("matrix", "edgelist", "graph"), ...){
+  value <- match.arg(value)
+
 
   # find method
   method <- match_method(method)
@@ -79,6 +96,9 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...)
   v2 <- check_vertices(graph, v2)
 
   result <- do.call(method, list(graph = graph, v1 = v1, v2 = v2, ...))
+  rownames(result) <- v1
+  colnames(result) <- v2
+  result <- coerce_result(result, value, graph)
   result
 }
 
@@ -86,7 +106,8 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...)
 #' @method proxfun network
 #' @export
 #' @rdname proxfun
-proxfun.network <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...){
+proxfun.network <- function(graph, method, v1 = NULL, v2 = v1,
+                            value =c("matrix", "edgelist", "graph"), ...){
   graph <- intergraph::asIgraph(graph)
   proxfun.igraph(graph, method = method , v1 = v1, v2 = v2, value = value, ...)
 }
@@ -123,3 +144,35 @@ check_vertices <- function(graph, v){
     v
   } else stop("Vertex sequence must be numeric or character")
 }
+
+
+## function coercing result to desired type
+coerce_result <- function(result, value, graph){
+  if (value == "matrix")
+    return(result)
+  if (value == "edgelist"){
+    ind <- c(result > 0)
+    edges <- expand.grid(rownames(result), colnames(result))[ind, ]
+    names(edges) <- c("from", "to")
+    edges$value <- c(result)[ind]
+    rownames(edges) <- NULL
+    return(edges)
+  }
+  if (value == "graph"){
+    if (any(dim(result) < igraph::vcount(graph))){
+      warning("Only similarity for full vertices sequence could be returned as a graph. Returning matrix instead.")
+      return(result)
+    }
+    # sort vertices lists
+    result <- result[order(as.numeric(rownames(result))),
+                     order(as.numeric(colnames(result)))]
+    # create weighted graph
+    g <- graph.adjacency(result, weighted = TRUE, add.colnames = NA,
+                         mode = ifelse(igraph::is.directed(graph), "directed", "undirected"))
+    # empty original graph and add weighted graph to preserve structure
+    g <- graph.union(igraph::delete.edges(graph, igraph::E(graph)), g,
+                     byname = FALSE)
+    return(g)
+  }
+}
+

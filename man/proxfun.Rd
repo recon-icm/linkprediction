@@ -7,11 +7,11 @@
 \usage{
 proxfun(graph, ...)
 
-\method{proxfun}{igraph}(graph, method, v1 = NULL, v2 = v1, value = NULL,
-  ...)
+\method{proxfun}{igraph}(graph, method, v1 = NULL, v2 = v1,
+  value = c("matrix", "edgelist", "graph"), ...)
 
-\method{proxfun}{network}(graph, method, v1 = NULL, v2 = v1, value = NULL,
-  ...)
+\method{proxfun}{network}(graph, method, v1 = NULL, v2 = v1,
+  value = c("matrix", "edgelist", "graph"), ...)
 }
 \arguments{
 \item{graph}{an object of class \code{igraph} or \code{network}}
@@ -28,7 +28,21 @@ returned. This must be on of "\code{matrix}", "\code{graph}" or
 "\code{edgelist}", with default "\code{matrix}".}
 }
 \value{
-matrix or edgelist or, if sets of vertices are full, an igraph
+If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
+  \code{length(v2)} with \code{rownames} and \code{colnames} equal to
+  \code{v1} and \code{v2} respectively.
+  If \code{value = "edgelist"} a \code{data.frame} with three columns:
+  \describe{
+    \item{from}{ID of a start node of an edge}
+    \item{to}{ID of an end node of an edge}
+    \item{value}{similarity score for that edge}
+    }
+  Edges with similarity score 0 are omitted.
+  If \code{value = "graph"} an object of class \code{igraph} or \code{network},
+  depending on the class of input graph. Returned graph has the same structure
+  (graph and node attributes, etc.) as the input graph, except for edges -
+  original edges are skipped, and new edges with positive similarity score
+  are added. Edged attribute "weight" indicates similarity score.
 }
 \description{
 General function for calculating nodes' proximity in a graph
@@ -39,11 +53,11 @@ This function calculates vertex proximity (similarity) with selected method
 
 Following methods are available:
 
+ \code{aa} Adamic-Adar index
+
  \code{act} average commute time
 
  \code{act_n} normalized average commute time
-
- \code{aa} Adamic-Adar index
 
  \code{cn} common neighbours
 
