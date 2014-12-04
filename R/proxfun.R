@@ -117,7 +117,8 @@ check_vertices <- function(graph, v){
   } else if (is.character(v)){
     if (!igraph::is.named(graph))
       stop("Graph does not have vertex names. Provide vertex IDs")
-    if (!all(v %in% igraph::V(graph)$name))
+    v <- match(v, igraph::V(graph)$name)
+    if (any(is.na(v)))
       stop("Invalid vertex names")
     v
   } else stop("Vertex sequence must be numeric or character")
