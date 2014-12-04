@@ -78,7 +78,7 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1, value = NULL, ...)
   v1 <- check_vertices(graph, v1)
   v2 <- check_vertices(graph, v2)
 
-  result <- do.call(method, list(graph = graph, ...))
+  result <- do.call(method, list(graph = graph, v1 = v1, v2 = v2, ...))
   result
 }
 
