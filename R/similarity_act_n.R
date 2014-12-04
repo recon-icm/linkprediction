@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_act_n(g)
 #'
-#' @export
 
 similarity_act_n <- function(graph){
   L <- igraph::graph.laplacian(graph)

@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_lp(g, eps = 0.01)
 #'
-#' @export
 
 similarity_lp <- function(graph, eps = 0.01){
   A <- igraph::get.adjacency(graph)

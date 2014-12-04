@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_jaccard(g)
 #'
-#' @export
 
 similarity_jaccard <- function(graph){
   score <- igraph::similarity.jaccard(graph)

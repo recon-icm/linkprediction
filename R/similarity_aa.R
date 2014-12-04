@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_aa(g)
 #'
-#' @export
 
 similarity_aa <- function(graph){
   score <- igraph::similarity.invlogweighted(graph)

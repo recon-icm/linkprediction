@@ -11,7 +11,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_lhn_local(g)
 #'
-#' @export
 
 similarity_lhn_local <- function(graph){
   deg <- igraph::degree(graph)

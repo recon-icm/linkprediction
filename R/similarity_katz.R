@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_katz(g, 0.001)
 #'
-#' @export
 
 similarity_katz <- function(graph, beta = 0.001){
   A  <- igraph::get.adjacency(graph)

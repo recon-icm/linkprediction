@@ -12,7 +12,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_hpi(g)
 #'
-#' @export
 
 similarity_hpi <- function(graph){
   deg <- igraph::degree(graph)

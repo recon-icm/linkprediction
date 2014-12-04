@@ -14,7 +14,6 @@
 #' g <- igraph::barabasi.game(20)
 #' similarity_pa(g)
 #'
-#' @export
 
 similarity_pa <- function(graph){
   deg <- igraph::degree(graph)

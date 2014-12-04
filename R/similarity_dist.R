@@ -15,7 +15,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_dist(g)
 #'
-#' @export
 
 
 

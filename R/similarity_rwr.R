@@ -15,7 +15,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_rwr(g, alpha = 0.3)
 #'
-#' @export
 
 similarity_rwr <- function(graph, alpha = 0.3){
   P <- as.matrix(igraph::get.stochastic(graph))

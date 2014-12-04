@@ -13,7 +13,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_lhn_global(g, 0.5)
 #'
-#' @export
 
 similarity_lhn_global <- function(graph, theta = 0.5){
   lambda <- igraph::graph.eigen(graph)$value

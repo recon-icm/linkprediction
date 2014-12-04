@@ -11,7 +11,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_cos_l(g)
 #'
-#' @export
 
 similarity_cos_l <- function(graph){
   L <- igraph::graph.laplacian(graph)

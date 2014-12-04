@@ -11,7 +11,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_cos(g)
 #'
-#' @export
 
 similarity_cos <- function(graph){
   deg <- igraph::degree(graph)

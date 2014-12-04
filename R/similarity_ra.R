@@ -11,7 +11,6 @@
 #' g <- igraph::random.graph.game(20, 0.3)
 #' similarity_ra(g)
 #'
-#' @export
 
 similarity_ra <- function(graph){
   n <- igraph::vcount(graph)
