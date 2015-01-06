@@ -1,20 +1,13 @@
-#' Averag Commute Time, normalized
-#'
-#' Similarity measure based on random walker
-#'
-#' This function calculates vertex similarity based on the average number of
-#'  steps, that random walker on the graph needs to get from one vertex to
-#'  another and additionally weights it by its stationary distribution.
-#'
-#' @template sim
-#'
-#' @examples
-#' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_act_normal(g)
-#'
-#' @export
+# Averag Commute Time, normalized
+#
+# Similarity measure based on random walker
+#
+# This function calculates vertex similarity based on the average number of
+#  steps, that random walker on the graph needs to get from one vertex to
+#  another and additionally weights it by its stationary distribution.
+#
 
-similarity_act_normal <- function(graph){
+similarity_act_n <- function(graph, v1, v2, ...){
   L <- igraph::graph.laplacian(graph)
   n <- igraph::vcount(graph)
   m <- igraph::ecount(graph)
@@ -35,5 +28,5 @@ similarity_act_normal <- function(graph){
 
   score <- 1 / tau
   diag(score) <- 0
-  score
+  score[v1, v2]
 }

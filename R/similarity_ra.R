@@ -1,19 +1,12 @@
-#' Resource allocation vertex similarity
-#'
-#' Similarity measure based on resource allocation process.
-#'
-#' This function counts the number of common neighbours weighted by the inverse
-#' of their degrees.
-#'
-#' @template sim
-#'
-#' @examples
-#' g <- igraph::random.graph.game(20, 0.3)
-#' similarity_resource_allocation(g)
-#'
-#' @export
+# Resource allocation vertex similarity
+#
+# Similarity measure based on resource allocation process.
+#
+# This function counts the number of common neighbours weighted by the inverse
+# of their degrees.
+#
 
-similarity_resource_allocation <- function(graph){
+similarity_ra <- function(graph, v1, v2, ...){
   n <- igraph::vcount(graph)
   score <- matrix(integer(n^2), nrow = n)
 
@@ -45,5 +38,5 @@ similarity_resource_allocation <- function(graph){
       }
     }
   }
-score
+  score[v1, v2]
 }
