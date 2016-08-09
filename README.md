@@ -2,11 +2,15 @@
 
 [![Build Status](https://travis-ci.org/mbojan/linkprediction.png?branch=master)](https://travis-ci.org/mbojan/linkprediction)
 
+
+Proximity-based methods of link prediction.
+
+
+
 ## Installation
 
-Using Hadley Wickham's [devtools](https://github.com/hadley/devtools) package:
+Using Hadley Wickham's [devtools](https://github.com/hadley/devtools):
 
 ```{r}
-library(devtools)
-install_github("mbojan/linkprediction")
+devtools::install_github("mbojan/linkprediction")
 ```
