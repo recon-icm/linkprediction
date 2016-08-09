@@ -22,4 +22,4 @@ devtools::install_github("mbojan/linkprediction")
 Authors thank (Polish) National Science Centre for support through SONATA grant
 2012/07/D/HS6/01971 for the project *Dynamics of Competition and 
 Collaboration  in Science: Individual Strategies, Collaboration Networks, and 
-Organizational Hierarchies* (<recon.icm.edu.pl>).
+Organizational Hierarchies* (http://recon.icm.edu.pl).
