@@ -5,8 +5,8 @@ Authors@R: c(
   person( "Michal", "Bojanowski", email="michal2992@gmail.com", role="aut"), 
   person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut", "cre"))
   )
-Description: Methods for link prediction in graphs. 
-  Implements most of existing proximity-based measures.
+Description: Methods for link prediction in graphs.
+    Implements most of existing proximity-based measures.
 Depends:
     R (>= 3.1.1),
 License: GPL-2
@@ -16,3 +16,4 @@ Imports:
     intergraph
 Suggests:
     testthat
+RoxygenNote: 5.0.1
