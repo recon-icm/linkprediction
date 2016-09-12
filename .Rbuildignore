@@ -3,3 +3,4 @@
 man-roxygen
 .txt$
 .travis.yml
+^appveyor\.yml$
