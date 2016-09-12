@@ -9,6 +9,14 @@
 
 
 similarity_aa <- function(graph, v1, v2, ...){
-  score <- igraph::similarity.invlogweighted(graph)
-  score[v1, v2]
+  all_v <- unique(c(v1, v2))
+  score <- igraph::similarity(
+    graph, 
+    vids=all_v, 
+    method="invlogweighted",
+    ... 
+    )
+  r <- match(v1, all_v)
+  k <- match(v2, all_v)
+  score[r, k]
 }
