@@ -28,3 +28,35 @@ test_that("Error is thrown for directed networks", {
     proxfun( igraph::make_graph(c(1,2, 2,3, 3,4), directed=TRUE) )
   )
 })
+
+
+
+
+
+
+
+context("Check if `proxfun` return proper objects")
+
+all_methods <- c("act", "act_n", "aa", "cn", "cos", "cos_l",
+                 "dist", "hdi", "hpi", "jaccard", "katz", "l",
+                 "lhn_local", "lhn_global", "lp", "mf", "pa", "ra",
+                 "rwr", "sor")
+
+g <- igraph::make_graph(~ a -- b -- c -- d)
+
+for(m in all_methods) {
+  test_that(
+    paste("Checking calculating", sQuote(m), sep=" "),
+    {
+      testthat::expect_is(
+        proxfun(g, method=m, value="matrix"),
+        "matrix"
+        )
+      testthat::expect_is(
+        proxfun(g, method=m, value="edgelist"),
+        "data.frame"
+      )
+    }
+  )
+}
+

@@ -8,3 +8,5 @@ test_that("AA works correctly for a line network", {
   expect_equal(m[3,1], 1 / log(2) )
 })
 
+
+
