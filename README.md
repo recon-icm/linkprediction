@@ -14,7 +14,7 @@ Proximity-based methods of link prediction.
 Using Hadley Wickham's [devtools](https://github.com/hadley/devtools):
 
 ```{r}
-devtools::install_github("mbojan/linkprediction")
+devtools::install_github("recon-icm/linkprediction")
 ```
 
 
