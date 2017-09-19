@@ -10,5 +10,5 @@ similarity_lp <- function(graph, v1, v2, eps = 0.01, ...){
   A <- igraph::get.adjacency(graph)
   score <- A %*% A
   score <- score + score %*% A * eps
-  score[v1, v2]
+  as.matrix(score[v1, v2])
 }
