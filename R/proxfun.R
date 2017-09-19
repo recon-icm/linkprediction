@@ -14,47 +14,31 @@
 #'  "\code{edgelist}", with default "\code{matrix}".
 #' @param ... additional arguments specific for a selected measure
 #'
-#' @details Following methods are available:
+#' @details 
+#' Following methods are available:
+#' \describe{
+#'  \item{\code{aa}}{Adamic-Adar index}
+#'  \item{\code{act}}{average commute time}
+#'  \item{\code{act_n}}{normalized average commute time}
+#'  \item{\code{cn}}{common neighbours}
+#'  \item{\code{cos}}{cosine similarity}
+#'  \item{\code{cos_l}}{cosine similarity on L+}
+#'  \item{\code{dist}}{graph distance}
+#'  \item{\code{hdi}}{Hub Depressed Index}
+#'  \item{\code{hpi}}{Hub Promoted Index}
+#'  \item{\code{jaccard}}{Jaccard coefficient}
+#'  \item{\code{katz}}{Katz index}
+#'  \item{\code{l}}{L+ directly}
+#'  \item{\code{lhn_local}}{Leicht-Holme-Newman Index}
+#'  \item{\code{lhn_global}}{Leicht-Holme-Newman Index global version}
+#'  \item{\code{lp}}{Local Path Index}
+#'  \item{\code{mf}}{Matrix Forest Index}
+#'  \item{\code{pa}}{preferential attachment}
+#'  \item{\code{ra}}{resource allocation}
+#'  \item{\code{rwr}}{random walk with restart}
+#'  \item{\code{sor}}{sorensen index/ dice coefficient}
+#' }
 #'
-#'  \code{aa} Adamic-Adar index
-#'
-#'  \code{act} average commute time
-#'
-#'  \code{act_n} normalized average commute time
-#'
-#'  \code{cn} common neighbours
-#'
-#'  \code{cos} cosine similarity
-#'
-#'  \code{cos_l} cosine similarity on L+
-#'
-#'  \code{dist} graph distance
-#'
-#'  \code{hdi} Hub Depressed Index
-#'
-#'  \code{hpi} Hub Promoted Index
-#'
-#'  \code{jaccard} Jaccard coefficient
-#'
-#'  \code{katz} Katz index
-#'
-#'  \code{l} L+ directly
-#'
-#'  \code{lhn_local} Leicht-Holme-Newman Index
-#'
-#'  \code{lhn_global} Leicht-Holme-Newman Index global version
-#'
-#'  \code{lp} Local Path Index
-#'
-#'  \code{mf} Matrix Forest Index
-#'
-#'  \code{pa} preferential attachment
-#'
-#'  \code{ra} resource allocation
-#'
-#'  \code{rwr} random walk with restart
-#'
-#'  \code{sor} sorensen index/ dice coefficient
 #'
 #'
 #' @return If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
