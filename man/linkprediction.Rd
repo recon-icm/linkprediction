@@ -15,4 +15,3 @@ grant 2012/07/D/HS6/01971 for the project \emph{Dynamics of Competition and
 Collaboration  in Science: Individual Strategies, Collaboration Networks, and
 Organizational Hierarchies} (\url{recon.icm.edu.pl}).
 }
-
