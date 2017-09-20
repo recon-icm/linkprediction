@@ -1,26 +1,28 @@
-#' Node proximity
+#' Vertex proximity indexes
 #'
-#' General function for calculating nodes' proximity in a graph
+#' General function for calculating several types of vertex proximities in a graph.
 #'
-#' This function calculates vertex proximity (similarity) with selected method
-#' and between selected vertices.
+#' @param graph an object of class \code{igraph} or \code{network}
+#' @param method single character, the method to be used, see Details
+#' @param v1,v2 vectors of vertices between which similarity will be calculated.
+#' Character vector is interpreted as vertex names. Numeric vector as vertex ids.
+#' @param value a character string giving a type of the object that should be
+#'  returned. This must be one of "\code{matrix}", "\code{graph}" or
+#'  "\code{edgelist}", with default "\code{matrix}".
+#' @param ... additional arguments specific for a selected measure
+#'
+#' @details 
 #' \Sexpr[stage=build,results=verbatim]{{
 #' keys <- c("adamic", "fouss", "pagerank", "zhou2009", "sorensen", "salton", "ravasz", "barabasi1999", "jaccard", "katz", "leicht", "mfi")
 #' bibdb <- bibtex::read.bib("vignettes/refs.bib")
 #' bibdb <- bibdb[keys]
 #' } }
+#' 
+#' This function calculates vertex proximity with the
+#' selected method and, optionally, between vertices
+#' specified with \code{v1} and \code{v2}. The following \code{method}s
+#' are available:
 #'
-#' @param graph an object of class \code{igraph} or \code{network}
-#' @param method a method (single string) for calculating similarities, see Details
-#' @param v1,v2 vectors of vertices between which similarity will be calculated
-#'   character is treated as names, numeric as ids
-#' @param value a character string giving a type of the object that should be
-#'  returned. This must be on of "\code{matrix}", "\code{graph}" or
-#'  "\code{edgelist}", with default "\code{matrix}".
-#' @param ... additional arguments specific for a selected measure
-#'
-#' @details 
-#' Following methods are available:
 #' \describe{
 #'  \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
 #'  \item{\code{act}}{Average Commute Time \Sexpr[stage=build]{cite("fouss", bibdb)}}
@@ -46,7 +48,8 @@
 #'
 #'
 #'
-#' @return If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
+#' @return 
+#' If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
 #'   \code{length(v2)} with \code{rownames} and \code{colnames} equal to
 #'   \code{v1} and \code{v2} respectively.
 #'   If \code{value = "edgelist"} a \code{data.frame} with three columns:
