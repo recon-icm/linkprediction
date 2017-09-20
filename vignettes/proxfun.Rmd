@@ -1,17 +1,18 @@
 ---
 title: "Proximity-based Methods for Link Prediction"
-author: "Bartosz Chroł"
+author: |
+  | Bartosz Chroł
+  | ICM UW
 date: "`r Sys.Date()`"
 bibliography: refs.bib
 output: 
   rmarkdown::pdf_document:
-    toc: true
+    toc: false
 vignette: >
   %\VignetteIndexEntry{Proximity-based Methods}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
 
 Node proximity is a well developed subject in graph theory, applied in many different contexts. There are many different measures of similarity, some specific for social network analysis. Selection of methods used in this work follows mainly [@kleinberg] and [@lu2011]. All measures give similarity score between two nodes (authors). Some measures are symmetrical by definition, some have to be modified to achieve symmetry. Similarities have different scales but fortunately absolute values are unimportant, as scores will not be compared between methods, only rankings of scores are of interest.
 
