@@ -1,10 +1,10 @@
 ---
-title: "Proximity-based Methods"
+title: "Proximity-based Methods for Link Prediction"
 author: "Bartosz Chroł"
 date: "`r Sys.Date()`"
 bibliography: refs.bib
 output: 
-  rmarkdown::html_vignette:
+  rmarkdown::pdf_document:
     toc: true
 vignette: >
   %\VignetteIndexEntry{Proximity-based Methods}
@@ -15,7 +15,7 @@ vignette: >
 
 Node proximity is a well developed subject in graph theory, applied in many different contexts. There are many different measures of similarity, some specific for social network analysis. Selection of methods used in this work follows mainly [@kleinberg] and [@lu2011]. All measures give similarity score between two nodes (authors). Some measures are symmetrical by definition, some have to be modified to achieve symmetry. Similarities have different scales but fortunately absolute values are unimportant, as scores will not be compared between methods, only rankings of scores are of interest.
 
-Similarity measures could be divided into local, global and quasi--local measures, following [@lu2011]. Local methods focus only on the properties of neighbourhoods of given pair of nodes, while global methods could benefit from information contained in the whole network. Quasi-local methods are in between: make use of more information than local methods, but still do not need information about whole graph.   
+Similarity measures could be divided into local, global and quasi-local measures, following [@lu2011]. Local methods focus only on the properties of neighbourhoods of given pair of nodes, while global methods could benefit from information contained in the whole network. Quasi-local methods are in between: make use of more information than local methods, but still do not need information about whole graph.   
 
 
 
@@ -26,7 +26,7 @@ Similarity measures could be divided into local, global and quasi--local measure
 
 # Local methods
 
-These measures are mainly variations on common neighbours.
+These measures are mainly variations on Common neighbours.
 
 
 
@@ -36,9 +36,9 @@ These measures are mainly variations on common neighbours.
 
 In common sense, two scientists are more likely to cooperate, if they have already collaborated with the same people. [@newman2001] used this method in the study of collaboration networks, showing positive relation between number of common neighbours and probability of collaborating in the future.
 
-\[
-s_{xy}=|\Gamma(x)\cap\Gamma(y)|,
-\]
+$$
+s_{xy}=\left| \Gamma(x) \cap \Gamma(y) \right|
+$$
 
 or in a matrix form
 
@@ -241,14 +241,17 @@ Matrix Forest Index can be understood as  the ratio of the number of spanning ro
 
 
 ## Shortest Paths (Graph distance)
-\[
-s_{xy}=\left\{ \begin{array}{ll}
+
+\begin{equation}
+s_{xy}=\left\{ 
+\begin{array}{ll}
 \infty & \textrm{if $x= y$}\\
-0 & \textrm{if $x$ and $y$ are not connected}\\
+ 0 & \textrm{if $x$ and $y$ are not connected}\\
 \frac{1}{p_{xy}} & \textrm{in other cases}
 \end{array} \right.
-\]
-where \( {p_{xy}}=\min \{l:path_{xy}^{<l>}\textrm{ exists}\} \) is the length of the shortest path connecting $x$ and $y$.
+\end{equation}
+
+where $\{p_{xy}\}=\min \{l:\text{path}_{xy}^{<l>}\textrm{ exists}\}$ is the length of the shortest path connecting $x$ and $y$.
 
 ## Local Path Index 
 
