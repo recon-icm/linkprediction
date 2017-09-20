@@ -4,7 +4,11 @@
 #'
 #' This function calculates vertex proximity (similarity) with selected method
 #' and between selected vertices.
-#' \Sexpr[stage=build,results=verbatim]{bibdb <- bibtex::read.bib("vignettes/refs.bib")}
+#' \Sexpr[stage=build,results=verbatim]{{
+#' keys <- c("adamic", "fouss", "pagerank", "zhou2009", "sorensen", "salton", "ravasz", "barabasi1999", "jaccard", "katz", "leicht", "mfi")
+#' bibdb <- bibtex::read.bib("vignettes/refs.bib")
+#' bibdb <- bibdb[keys]
+#' } }
 #'
 #' @param graph an object of class \code{igraph} or \code{network}
 #' @param method a method (single string) for calculating similarities, see Details
@@ -19,25 +23,25 @@
 #' Following methods are available:
 #' \describe{
 #'  \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
-#'  \item{\code{act}}{Average Commute Time}
-#'  \item{\code{act_n}}{Normalized Average Commute Time}
+#'  \item{\code{act}}{Average Commute Time \Sexpr[stage=build]{cite("fouss", bibdb)}}
+#'  \item{\code{act_n}}{Normalized Average Commute Time \Sexpr[stage=build]{cite("fouss", bibdb)}}
 #'  \item{\code{cn}}{Common Neighbours}
 #'  \item{\code{cos}}{Cosine similarity \Sexpr[stage=build]{cite("salton", bibdb)}}
-#'  \item{\code{cos_l}}{cosine similarity on L+}
+#'  \item{\code{cos_l}}{cosine similarity on L+ \Sexpr[stage=build]{cite("fouss", bibdb)}}
 #'  \item{\code{dist}}{graph distance}
-#'  \item{\code{hdi}}{Hub Depressed Index}
-#'  \item{\code{hpi}}{Hub Promoted Index}
-#'  \item{\code{jaccard}}{Jaccard coefficient \Sexpr[stage=build]{cite("jaccard", bibdb)}}
-#'  \item{\code{katz}}{Katz index}
-#'  \item{\code{l}}{L+ directly}
-#'  \item{\code{lhn_local}}{Leicht-Holme-Newman Index}
-#'  \item{\code{lhn_global}}{Leicht-Holme-Newman Index global version}
-#'  \item{\code{lp}}{Local Path Index}
-#'  \item{\code{mf}}{Matrix Forest Index}
-#'  \item{\code{pa}}{preferential attachment}
-#'  \item{\code{ra}}{resource allocation}
-#'  \item{\code{rwr}}{random walk with restart}
-#'  \item{\code{sor}}{sorensen index/ dice coefficient}
+#'  \item{\code{hdi}}{Hub Depressed Index \Sexpr[stage=build]{cite("ravasz", bibdb)}}
+#'  \item{\code{hpi}}{Hub Promoted Index \Sexpr[stage=build]{cite("ravasz", bibdb)}}
+#'  \item{\code{jaccard}}{Jaccard coefficient \Sexpr[stage=build]{cite("jaccard", bibdb)} \Sexpr[stage=build]{cite("adamic", bibdb)}}
+#'  \item{\code{katz}}{Katz index \Sexpr[stage=build]{cite("katz", bibdb)}}
+#'  \item{\code{l}}{L+ directly \Sexpr[stage=build]{cite("fouss", bibdb)}}
+#'  \item{\code{lhn_local}}{Leicht-Holme-Newman Index \Sexpr[stage=build]{cite("leicht", bibdb)}}
+#'  \item{\code{lhn_global}}{Leicht-Holme-Newman Index global version \Sexpr[stage=build]{cite("leicht", bibdb)}}
+#'  \item{\code{lp}}{Local Path Index \Sexpr[stage=build]{cite("zhou2009", bibdb)}}
+#'  \item{\code{mf}}{Matrix Forest Index \Sexpr[stage=build]{cite("mfi", bibdb)}}
+#'  \item{\code{pa}}{preferential attachment \Sexpr[stage=build]{cite("barabasi1999", bibdb)}}
+#'  \item{\code{ra}}{resource allocation \Sexpr[stage=build]{cite("zhou2009", bibdb)}}
+#'  \item{\code{rwr}}{random walk with restart \Sexpr[stage=build]{cite("pagerank", bibdb)}}
+#'  \item{\code{sor}}{sorensen index/ dice coefficient \Sexpr[stage=build]{cite("sorensen", bibdb)}}
 #' }
 #'
 #'
@@ -60,7 +64,7 @@
 #'   
 #' @references 
 #' 
-#' \Sexpr[stage=build,results=rd]{capture.output(print(bibdb))}
+#' \Sexpr[stage=build,results=rd]{capture.output(print(bibdb, sort=TRUE))}
 #'
 #' @export
 
