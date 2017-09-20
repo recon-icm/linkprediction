@@ -4,7 +4,7 @@
 #'
 #' This function calculates vertex proximity (similarity) with selected method
 #' and between selected vertices.
-#' \Sexpr[stage=build,results=verbatim]{bibdb <- bibtex::read.bib("man-roxygen/refs.bib")}
+#' \Sexpr[stage=build,results=verbatim]{bibdb <- bibtex::read.bib("vignettes/refs.bib")}
 #'
 #' @param graph an object of class \code{igraph} or \code{network}
 #' @param method a method (single string) for calculating similarities, see Details
@@ -19,15 +19,15 @@
 #' Following methods are available:
 #' \describe{
 #'  \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
-#'  \item{\code{act}}{average commute time}
-#'  \item{\code{act_n}}{normalized average commute time}
-#'  \item{\code{cn}}{common neighbours}
-#'  \item{\code{cos}}{cosine similarity}
+#'  \item{\code{act}}{Average Commute Time}
+#'  \item{\code{act_n}}{Normalized Average Commute Time}
+#'  \item{\code{cn}}{Common Neighbours}
+#'  \item{\code{cos}}{Cosine similarity \Sexpr[stage=build]{cite("salton", bibdb)}}
 #'  \item{\code{cos_l}}{cosine similarity on L+}
 #'  \item{\code{dist}}{graph distance}
 #'  \item{\code{hdi}}{Hub Depressed Index}
 #'  \item{\code{hpi}}{Hub Promoted Index}
-#'  \item{\code{jaccard}}{Jaccard coefficient}
+#'  \item{\code{jaccard}}{Jaccard coefficient \Sexpr[stage=build]{cite("jaccard", bibdb)}}
 #'  \item{\code{katz}}{Katz index}
 #'  \item{\code{l}}{L+ directly}
 #'  \item{\code{lhn_local}}{Leicht-Holme-Newman Index}
