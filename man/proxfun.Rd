@@ -4,7 +4,7 @@
 \alias{proxfun}
 \alias{proxfun.igraph}
 \alias{proxfun.network}
-\title{Node proximity}
+\title{Vertex proximity indexes}
 \usage{
 proxfun(graph, ...)
 
@@ -19,13 +19,13 @@ proxfun(graph, ...)
 
 \item{...}{additional arguments specific for a selected measure}
 
-\item{method}{a method (single string) for calculating similarities, see Details}
+\item{method}{single character, the method to be used, see Details}
 
-\item{v1, v2}{vectors of vertices between which similarity will be calculated
-character is treated as names, numeric as ids}
+\item{v1, v2}{vectors of vertices between which similarity will be calculated.
+Character vector is interpreted as vertex names. Numeric vector as vertex ids.}
 
 \item{value}{a character string giving a type of the object that should be
-returned. This must be on of "\code{matrix}", "\code{graph}" or
+returned. This must be one of "\code{matrix}", "\code{graph}" or
 "\code{edgelist}", with default "\code{matrix}".}
 }
 \value{
@@ -46,19 +46,20 @@ If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
   are added. Edged attribute "weight" indicates similarity score.
 }
 \description{
-General function for calculating nodes' proximity in a graph
+General function for calculating several types of vertex proximities in a graph.
 }
 \details{
-This function calculates vertex proximity (similarity) with selected method
-and between selected vertices.
 \Sexpr[stage=build,results=verbatim]{{
 keys <- c("adamic", "fouss", "pagerank", "zhou2009", "sorensen", "salton", "ravasz", "barabasi1999", "jaccard", "katz", "leicht", "mfi")
 bibdb <- bibtex::read.bib("vignettes/refs.bib")
 bibdb <- bibdb[keys]
 } }
 
+This function calculates vertex proximity with the
+selected method and, optionally, between vertices
+specified with \code{v1} and \code{v2}. The following \code{method}s
+are available:
 
-Following methods are available:
 \describe{
  \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
  \item{\code{act}}{Average Commute Time \Sexpr[stage=build]{cite("fouss", bibdb)}}
