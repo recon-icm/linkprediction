@@ -12,10 +12,15 @@
 #' @param ... additional arguments specific for a selected measure
 #'
 #' @details 
-#' This function calculates vertex proximity with the 
-#' selected method and, optionally, between vertices 
-#' specified with \code{v1} and \code{v2}. The following
-#' \code{method}s are available:
+#' This function calculates vertex proximities in graph \code{graph} with the 
+#' selected \code{method}. The \code{graph} has to be undirected and connected. 
+#' Some of the methods support computation only for selected vertices, which 
+#' should be more efficient when needed. Supplying vertex IDs or names (if 
+#' present in the \code{graph}) to \code{v1} and \code{v2} will calculate
+#' proximities of \math{v1 x v2}.
+#' 
+#' The following \code{method}s are available (see \code{vignette("proxfun",
+#' package="linkprediction")} for more details and formal definitions):
 #'
 #' \describe{
 #'  \item{\code{aa}}{Adamic-Adar index  (Adamic and Adar 2001)}
@@ -43,24 +48,21 @@
 #'
 #'
 #' @return 
-#' If \code{value = "matrix"} a matrix with \code{length(v1)}
-#' rows and \code{length(v2)} with \code{rownames} and
-#' \code{colnames} equal to \code{v1} and \code{v2}
-#' respectively. If \code{value = "edgelist"} a
-#' \code{data.frame} with three columns:
+#' If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
+#' \code{length(v2)} with \code{rownames} and \code{colnames} equal to \code{v1}
+#' and \code{v2} respectively. If \code{value = "edgelist"} a \code{data.frame}
+#' with three columns:
 #' \describe{
 #'  \item{from}{ID of a start node of an edge}
 #'  \item{to}{ID of an end node of an edge}
 #'  \item{value}{similarity score for that edge}
 #' }
-#' Edges with similarity score 0 are omitted. If \code{value 
-#' = "graph"} an object of class \code{igraph} or 
-#' \code{network}, depending on the class of input graph. 
-#' Returned graph has the same structure (graph and node 
-#' attributes, etc.) as the input graph, except for edges - 
-#' original edges are skipped, and new edges with positive 
-#' similarity score are added. Edged attribute "weight" 
-#' indicates similarity score.
+#' Edges with similarity score 0 are omitted. If \code{value = "graph"} an
+#' object of class \code{igraph} or \code{network}, depending on the class of
+#' input graph. Returned graph has the same structure (graph and node 
+#' attributes, etc.) as the input graph, except for edges - original edges are
+#' skipped, and new edges with positive similarity score are added. Edged
+#' attribute "weight" indicates similarity score.
 #'   
 #' @references 
 #' Adamic L and Adar E (2001). “Friends and Neighbors on the Web.” _Social Networks_, *25*,
@@ -117,7 +119,7 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
   # temporary issue - break code if graph is directed or disconnected until
   # proper functions are implemented
   if (igraph::is.directed(graph) | !igraph::is.connected(graph))
-    stop("Graph has to be undirected and connected")
+    stop("graph has to be undirected and connected")
 
   value <- match.arg(value)
 
