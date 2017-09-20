@@ -4,6 +4,7 @@
 [![Build Status](https://ci.appveyor.com/api/projects/status/y46iikfhmkfcs47l?svg=true)](https://ci.appveyor.com/project/mbojan/linkprediction)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/linkprediction?color=2ED968)](http://cranlogs.r-pkg.org/)
 [![cran version](http://www.r-pkg.org/badges/version/linkprediction)](https://cran.r-project.org/package=linkprediction)
+[![codecov](https://codecov.io/gh/recon-icm/linkprediction/branch/master/graph/badge.svg)](https://codecov.io/gh/recon-icm/linkprediction)
 
 Proximity-based methods of link prediction.
 
