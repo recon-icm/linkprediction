@@ -2,7 +2,7 @@
 title: "Proximity-based Methods"
 author: "Bartosz Chroł"
 date: "`r Sys.Date()`"
-bibliography: refs.bib
+bibliography: refs-new.bib
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -50,7 +50,7 @@ s_{xy}=(A^2)_{xy}.
 
 ## Salton Index (cosine similarity) 
 
-Due to @salton. It measures the cosine of the angle between columns of the adjacency matrix, corresponding to given nodes. This measure is commonly used in information retrieval.
+Due to @salton . It measures the cosine of the angle between columns of the adjacency matrix, corresponding to given nodes. This measure is commonly used in information retrieval.
 
 \[
 s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\sqrt{k_x\times k_y}}.
