@@ -1,6 +1,6 @@
 Package: linkprediction
 Title: Link Prediction Methods
-Version: 0.1
+Version: 1.0-0
 Authors@R: c( 
   person( "Michal", "Bojanowski", email="michal2992@gmail.com", role="aut"), 
   person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut", "cre"))
