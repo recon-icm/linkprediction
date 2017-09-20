@@ -3,7 +3,8 @@
 #' General function for calculating nodes' proximity in a graph
 #'
 #' This function calculates vertex proximity (similarity) with selected method
-#'   and between selected vertices.
+#' and between selected vertices.
+#' \Sexpr[stage=build,results=verbatim]{bibdb <- bibtex::read.bib("man-roxygen/refs.bib")}
 #'
 #' @param graph an object of class \code{igraph} or \code{network}
 #' @param method a method (single string) for calculating similarities, see Details
@@ -17,7 +18,7 @@
 #' @details 
 #' Following methods are available:
 #' \describe{
-#'  \item{\code{aa}}{Adamic-Adar index}
+#'  \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
 #'  \item{\code{act}}{average commute time}
 #'  \item{\code{act_n}}{normalized average commute time}
 #'  \item{\code{cn}}{common neighbours}
@@ -56,6 +57,10 @@
 #'   (graph and node attributes, etc.) as the input graph, except for edges -
 #'   original edges are skipped, and new edges with positive similarity score
 #'   are added. Edged attribute "weight" indicates similarity score.
+#'   
+#' @references 
+#' 
+#' \Sexpr[stage=build,results=rd]{capture.output(print(bibdb))}
 #'
 #' @export
 

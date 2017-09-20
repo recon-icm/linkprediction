@@ -50,12 +50,13 @@ General function for calculating nodes' proximity in a graph
 }
 \details{
 This function calculates vertex proximity (similarity) with selected method
-  and between selected vertices.
+and between selected vertices.
+\Sexpr[stage=build,results=verbatim]{bibdb <- bibtex::read.bib("man-roxygen/refs.bib")}
 
 
 Following methods are available:
 \describe{
- \item{\code{aa}}{Adamic-Adar index}
+ \item{\code{aa}}{Adamic-Adar index \Sexpr[stage=build]{cite("adamic", bibdb)}}
  \item{\code{act}}{average commute time}
  \item{\code{act_n}}{normalized average commute time}
  \item{\code{cn}}{common neighbours}
@@ -76,4 +77,7 @@ Following methods are available:
  \item{\code{rwr}}{random walk with restart}
  \item{\code{sor}}{sorensen index/ dice coefficient}
 }
+}
+\references{
+\Sexpr[stage=build,results=rd]{capture.output(print(bibdb))}
 }
