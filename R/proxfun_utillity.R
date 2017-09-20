@@ -33,7 +33,10 @@ check_vertices <- function(graph, v){
 
 
 
-## function coercing result to desired type
+## Function coercing result to desired type
+## result = proxfun() result
+## value = argument as in proxfun()
+## graph = original graph
 coerce_result <- function(result, value, graph){
   if (value == "matrix")
     return(result)
@@ -47,7 +50,7 @@ coerce_result <- function(result, value, graph){
   }
   if (value == "graph"){
     if (any(dim(result) < igraph::vcount(graph))){
-      warning("Only similarity for full vertices sequence could be returned as a graph. Returning matrix instead.")
+      stop("returning as igraph is not supported for proximities calculated for a subset of edges")
       return(result)
     }
     # sort vertices lists
