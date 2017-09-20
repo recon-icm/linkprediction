@@ -5,8 +5,7 @@ Authors@R: c(
   person( "Michal", "Bojanowski", email="michal2992@gmail.com", role="aut"), 
   person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut", "cre"))
   )
-Description: Methods for link prediction in graphs.
-    Implements most of existing proximity-based measures.
+Description: Implementations of most of the existing proximity-based methods of link prediction in graphs.
 Depends:
     R (>= 3.1.1),
 License: GPL-2
@@ -15,8 +14,9 @@ Imports:
     igraph,
     intergraph
 Suggests:
-  bibtex,
   knitr,
   testthat
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
+BugReports: https://github.com/recon-icm/linkprediction/issues
+URL: https://github.com/recon-icm/linkprediction
