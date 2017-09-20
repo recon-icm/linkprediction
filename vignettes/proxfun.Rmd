@@ -2,7 +2,7 @@
 title: "Proximity-based Methods"
 author: "Bartosz Chroł"
 date: "`r Sys.Date()`"
-bibliography: refs-new.bib
+bibliography: refs.bib
 output: 
   rmarkdown::html_vignette:
     toc: true
