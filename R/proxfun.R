@@ -1,7 +1,7 @@
 #' Vertex proximity indexes
 #'
 #' General function for calculating several types of vertex proximities in a graph.
-#'
+#' 
 #' @param graph an object of class \code{igraph} or \code{network}
 #' @param method single character, the method to be used, see Details
 #' @param v1,v2 vectors of vertices between which similarity will be calculated.
@@ -105,6 +105,7 @@
 #' European Physical Journal B_, *71*(4), pp. 623-630.
 #'
 #' @export
+#' @encoding UTF-8
 
 proxfun <- function(graph, ...){
   UseMethod("proxfun")
