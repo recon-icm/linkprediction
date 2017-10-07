@@ -1,6 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-man-roxygen
-.txt$
-.travis.yml
+^man-roxygen
+^\.travis\.yml$
 ^appveyor\.yml$
