@@ -17,7 +17,7 @@
 #' Some of the methods support computation only for selected vertices, which 
 #' should be more efficient when needed. Supplying vertex IDs or names (if 
 #' present in the \code{graph}) to \code{v1} and \code{v2} will calculate
-#' proximities of \math{v1 x v2}.
+#' proximities of \eqn{v1 x v2}.
 #' 
 #' The following \code{method}s are available (see \code{vignette("proxfun",
 #' package="linkprediction")} for more details and formal definitions):
