@@ -2,8 +2,9 @@ Package: linkprediction
 Title: Link Prediction Methods
 Version: 1.0-0
 Authors@R: c( 
-  person( "Michal", "Bojanowski", email="michal2992@gmail.com", role=c("aut", "cre""), 
-  person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut"))
+  person( "Michal", "Bojanowski", email="michal2992@gmail.com", role=c("aut", "cre")), 
+  person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut")),
+  person(family="NCN grant 2012/07/D/HS6/01971 for the ReCoN project", role="fnd")
   )
 Description: Implementations of most of the existing proximity-based methods of link prediction in graphs.
 Depends:
