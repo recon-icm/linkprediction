@@ -12,9 +12,9 @@ Proximity-based methods of link prediction.
 
 ## Installation
 
-Using Hadley Wickham's [devtools](https://github.com/hadley/devtools):
+Using [devtools](https://github.com/hadley/devtools):
 
-```{r}
+```r
 devtools::install_github("recon-icm/linkprediction")
 ```
 
