@@ -1,25 +1,43 @@
 ---
 title: "Proximity-based Methods for Link Prediction"
-author: |
-  | Bartosz Chroł
-  | ICM UW
+author:
+  - Bartosz Chroł (ICM UW)
+  - Michał Bojanowski (ICM UW)
+institute: "ICM UW"
 date: "`r Sys.Date()`"
 bibliography: refs.bib
 output: 
+  rmarkdown::html_document:
+    toc: true
+    number_section: true
   rmarkdown::pdf_document:
-    toc: false
+    toc: true
+    number_section: true
 vignette: >
   %\VignetteIndexEntry{Proximity-based Methods}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Node proximity is a well developed subject in graph theory, applied in many different contexts. There are many different measures of similarity, some specific for social network analysis. Selection of methods used in this work follows mainly [@kleinberg] and [@lu2011]. All measures give similarity score between two nodes (authors). Some measures are symmetrical by definition, some have to be modified to achieve symmetry. Similarities have different scales but fortunately absolute values are unimportant, as scores will not be compared between methods, only rankings of scores are of interest.
 
-Similarity measures could be divided into local, global and quasi-local measures, following [@lu2011]. Local methods focus only on the properties of neighbourhoods of given pair of nodes, while global methods could benefit from information contained in the whole network. Quasi-local methods are in between: make use of more information than local methods, but still do not need information about whole graph.   
+Vertex proximity is a well developed subject in graph theory, applied in many different contexts. There are many different measures of similarity, some specific to social network analysis. Selection of methods used in this work follows mainly @kleinberg and @lu2011. All measures give similarity score between two vertices. Some measures are symmetrical by definition, some have to be modified to achieve symmetry. Similarities have different scales but absolute values are unimportant as scores are not be compared between methods, only rankings of scores are of interest.
 
+Similarity measures could be divided into local, global and quasi-local measures, following @lu2011. Local methods focus only on the properties of neighbourhoods of a given pair of vertices, while global methods benefit from information contained in the whole graph. Quasi-local methods are in between: make use of more information than local methods, but still do not need information about the whole graph.   
 
+Let us establish some notation used in sections below:
 
+- *Vertex set* is $V = \{1, 2, ..., x, y, ..., N\}$ where $x$ and $y$ are some generic vertices of interest
+- *Edge set* is $E = \{(x, y): x,y \in V\}$
+- *Graph* $G$ is defined by a pair $(V, E)$
+
+As we will be discussing computing of proximity measures in a given graph $G$, we will drop references to $G$ from the notation.
+
+- An *adjacency matrix* of $G$ is a matrix $A = [a_{xy}]_{N\times N}$ such that $a_{xy} = 1$ if $(x, y) \in E$ otherwise $a_{xy} = 0$.
+- A *set of neighbors* of vertex $x$ in graph $G$ is $\Gamma(x)$, namely $\Gamma(x) = \{y: (x, y) \in E\}$.
+- $k_x$ degree of $x$ ?????????????
+- *Proximity measure* $s_{xy}$ is a function $s_{xy}: G, x, y \mapsto \Re$.
+
+Other notation will be introduced below when needed.
 
 
 
@@ -35,7 +53,7 @@ These measures are mainly variations on Common neighbours.
 
 ## Common neighbours
 
-In common sense, two scientists are more likely to cooperate, if they have already collaborated with the same people. [@newman2001] used this method in the study of collaboration networks, showing positive relation between number of common neighbours and probability of collaborating in the future.
+Two vertices are more likely to be connected if they are connected to the same set of other vertices. [@newman2001] used this method in the study of collaboration networks, showing positive relation between number of common neighbours and probability of collaborating in the future.
 
 $$
 s_{xy}=\left| \Gamma(x) \cap \Gamma(y) \right|
@@ -51,7 +69,7 @@ s_{xy}=(A^2)_{xy}.
 
 ## Salton Index (cosine similarity) 
 
-Due to @salton . It measures the cosine of the angle between columns of the adjacency matrix, corresponding to given nodes. This measure is commonly used in information retrieval.
+Due to @salton . It measures the cosine of the angle between columns of the adjacency matrix, corresponding to given vertices. This measure is commonly used in information retrieval.
 
 \[
 s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\sqrt{k_x\times k_y}}.
@@ -61,7 +79,7 @@ s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\sqrt{k_x\times k_y}}.
 
 ## Jaccard Index 
 
-Jaccard Index [@jaccard] measures how many neighbours of given nodes are shared. It reaches its maximum if $\Gamma(x)=\Gamma(y)$, that means all neighbours are shared.
+Jaccard Index [@jaccard] measures the proportion of common neighbours in the total number of neighbors. It reaches its maximum if $\Gamma(x)=\Gamma(y)$, namely all neighbours are common to both vertices.
 
 \[
 s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{|\Gamma(x)\cup\Gamma(y)|}.
@@ -70,7 +88,7 @@ s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{|\Gamma(x)\cup\Gamma(y)|}.
 
 ## Sørensen Index
 
-Due to [@sorensen]. This method is similar to Jaccard Index, as it measures a relative size of an intersection of neighbours' sets.
+Due to [@sorensen]. This method is similar to the Jaccard Index as it measures the relative size of an intersection of neighbours' sets.
 
 \[
 s_{xy}=\frac{2|\Gamma(x)\cap\Gamma(y)|}{k_x+k_y}.
@@ -79,7 +97,7 @@ s_{xy}=\frac{2|\Gamma(x)\cap\Gamma(y)|}{k_x+k_y}.
 
 ## Hub Promoted Index 
 
-Due to [@ravasz]. This measure assigns higher scores to links adjacent to hubs (high-degree nodes), as the denominator depends on the lower degree only.
+Due to [@ravasz]. This measure assigns higher scores to links adjacent to hubs (high-degree vertices), as the denominator depends on the minimum of the degrees of the vertices of interest.
 
 \[
 s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\min\{k_x,k_y\}}.
@@ -88,7 +106,7 @@ s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\min\{k_x,k_y\}}.
 
 ## Hub Depressed Index 
 
-Due to [@ravasz]. This measure, in contrast to Hub Promoted Index, assigns lower scores to links adjacent to hubs, since it penalises big neighbourhoods.
+Due to [@ravasz]. This measure, in contrast to Hub Promoted Index, assigns lower scores to links adjacent to hubs. It penalises large neighbourhoods.
 
 \[
 s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\max\{k_x,k_y\}}.
@@ -97,10 +115,10 @@ s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{\max\{k_x,k_y\}}.
 
 ## Leicht-Holme-Newman Index 
 
-Due to [@leicht]. It is a variant of common neighbours, similar to Salton Index.
+Due to @leicht. It is a variant of Common Neighbours, similar to Salton Index.
 
 \[
-s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{k_x\times k_y}.
+s_{xy}=\frac{|\Gamma(x) \cap \Gamma(y)|}{k_x \cdot k_y}.
 \]
 
 
@@ -109,28 +127,30 @@ s_{xy}=\frac{|\Gamma(x)\cap\Gamma(y)|}{k_x\times k_y}.
 Preferential Attachment was developed as a model of the growth of network in a sense of new nodes emerging [@barabasi1999].
 
 \[
-s_{xy}=k_x\times k_y.
+s_{xy}=k_x \cdot k_y.
 \]
 
 
 ## Adamic--Adar Index
 
-This measure develops simple counting of common neighbours by assigning weights to nodes inversely proportional to their degrees  [@adamic]. That means that a common neighbour, which is unique for a few nodes only, is more important than a hub. An index is well defined, because when node $z$ is a common neighbour of $x$ and $y$, than its degree is at least 2.   
+This measure develops simple counting of common neighbours by assigning weights to nodes inversely proportional to their degrees  [@adamic]. That means that a common neighbour, which is unique for a few nodes only, is more important than a hub. 
 
 \[
 s_{xy}=\sum_{z\in \Gamma(x)\cap\Gamma(y)}\frac{1}{\log k_z}.
 \]
 
+Note that this index is well defined, because when vertex $z$ is a common neighbour of $x$ and $y$, than its degree is at least 2.
+
 
 
 ## Resource Allocation Index 
 
-[@zhou2009]
+Proposed by @zhou2009. This measure is motivated by a resource allocation process. It measures how much resource is transmitted between $x$ and $y$. 
+
 
 \[
 s_{xy}=\sum_{z\in \Gamma(x)\cap\Gamma(y)}\frac{1}{k_z}.
 \]
-This measure is motivated by a resource allocation process. It measures how much resource is transmitted between $x$ and $y$. 
 
 
 
@@ -144,7 +164,7 @@ This measure is motivated by a resource allocation process. It measures how much
 s_{xy}=\sum_{l=1}^{\infty}\beta^l|paths_{xy}^{<l>}|,
 \]
 
-where $\beta$ is a free parameter. The sum converges when $\beta$ is lower than the reciprocal of the largest eigenvalue of adjacency matrix. If this condition is satisfied Katz Index could be expressed in matrix form
+where $\beta$ is a free parameter. The sum converges when $\beta$ is lower than the reciprocal of the largest eigenvalue of adjacency matrix. If this condition is satisfied Katz Index could be expressed in matrix form as
 
 \[
 S=(I-\beta A)^{-1}-I.
