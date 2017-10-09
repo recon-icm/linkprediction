@@ -9,7 +9,7 @@ Authors@R: c(
 Description: Implementations of most of the existing proximity-based methods of link prediction in graphs.
 Depends:
     R (>= 3.1.1),
-License: GPL-2
+License: MIT + file LICENSE
 LazyData: true
 Imports:
     igraph,
