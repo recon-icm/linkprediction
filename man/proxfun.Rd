@@ -68,58 +68,60 @@ package="linkprediction")} for more details and formal definitions):
  \item{\code{cos}}{Cosine similarity (Salton and McGill 1986)}
  \item{\code{cos_l}}{cosine similarity on L+ (Fouss et al. 2007)}
  \item{\code{dist}}{graph distance}
- \item{\code{hdi}}{Hub Depressed Index (Ravasz, Somera, Mongru, Oltvai, and Barabási 2002)}
+ \item{\code{hdi}}{Hub Depressed Index (Ravasz, Somera, Mongru, Oltvai, and Barabasi 2002)}
  \item{\code{hpi}}{Hub Promoted Index (Ravasz et al. 2002)}
  \item{\code{jaccard}}{Jaccard coefficient (Jaccard 1912)}
  \item{\code{katz}}{Katz index (Katz 1953)}
  \item{\code{l}}{L+ directly (Fouss et al. 2007)}
  \item{\code{lhn_local}}{Leicht-Holme-Newman Index (Leicht, Holme, and Newman 2006)}
  \item{\code{lhn_global}}{Leicht-Holme-Newman Index global version (Leicht et al. 2006)}
- \item{\code{lp}}{Local Path Index (Zhou, Lü, and Zhang 2009)}
+ \item{\code{lp}}{Local Path Index (Zhou, Lu, and Zhang 2009)}
  \item{\code{mf}}{Matrix Forest Index (Chebotarev P. Yu. 1997)}
- \item{\code{pa}}{preferential attachment (Barabási and Albert 1999)}
+ \item{\code{pa}}{preferential attachment (Barabasi and Albert 1999)}
  \item{\code{ra}}{resource allocation (Zhou et al. 2009)}
  \item{\code{rwr}}{random walk with restart (Brin and Page 1998)}
- \item{\code{sor}}{sorensen index/dice coefficient (Sørensen 1948)}
+ \item{\code{sor}}{sorensen index/dice coefficient (Sorensen 1948)}
 }
+
+Consult the vignette `proxfun` for further details.
 }
 \references{
-Adamic L and Adar E (2001). “Friends and Neighbors on the Web.” _Social Networks_, *25*,
+Adamic L and Adar E (2001). "Friends and Neighbors on the Web." _Social Networks_, *25*,
 pp. 211-230.
 
-Barabási A and Albert R (1999). “Emergence of Scaling in Random Networks.” _Science_,
+Barabasi A and Albert R (1999). "Emergence of Scaling in Random Networks." _Science_,
 *286*(5439), pp. 509-512.
 
-Brin S and Page L (1998). “The anatomy of a large-scale hypertextual Web search engine .”
-_Computer Networks and ISDN Systems _, *30*(1–7), pp. 107 - 117. Proceedings of the
+Brin S and Page L (1998). "The anatomy of a large-scale hypertextual Web search engine ."
+_Computer Networks and ISDN Systems _, *30*(1-7), pp. 107 - 117. Proceedings of the
 Seventh International World Wide Web Conference .
 
-Chebotarev P. Yu. SEV (1997). “The matrix-forest theorem and measuring relations in small
-social groups .” _Automation and Remote Control _, *58*(9), pp. 1505-1514.
+Chebotarev P. Yu. SEV (1997). "The matrix-forest theorem and measuring relations in small
+social groups ." _Automation and Remote Control _, *58*(9), pp. 1505-1514.
 
-Fouss F, Pirotte A, Renders J and Saerens M (2007). “Random-Walk Computation of
-Similarities Between Nodes of a Graph with Application to Collaborative Recommendation.”
+Fouss F, Pirotte A, Renders J and Saerens M (2007). "Random-Walk Computation of
+Similarities Between Nodes of a Graph with Application to Collaborative Recommendation."
 _IEEE Transactions on Knowledge and Data Engineering_, *19*(3), pp. 355-369.
 
-Jaccard P (1912). “The Distribution of the Flora in the Alpine Zone 1” _New
+Jaccard P (1912). "The Distribution of the Flora in the Alpine Zone 1" _New
 Phytologist_, *11*(2), pp. 37-50.
 
-Katz L (1953). “A new status index derived from sociometric analysis.” _Psychometrika_,
+Katz L (1953). "A new status index derived from sociometric analysis." _Psychometrika_,
 *18*(1), pp. 39-43.
 
-Leicht EA, Holme P and Newman MEJ (2006). “Vertex similarity in networks.” _Phys. Rev.
+Leicht EA, Holme P and Newman MEJ (2006). "Vertex similarity in networks." _Phys. Rev.
 E_, *73*(2), pp. 026120.
 
-Ravasz E, Somera AL, Mongru DA, Oltvai ZN and Barabási A (2002). “Hierarchical
-Organization of Modularity in Metabolic Networks.” _Science_, *297*(5586), pp. 1551-1555.
+Ravasz E, Somera AL, Mongru DA, Oltvai ZN and Barabasi A (2002). "Hierarchical
+Organization of Modularity in Metabolic Networks." _Science_, *297*(5586), pp. 1551-1555.
 
 Salton G and McGill MJ (1986). _Introduction to Modern Information Retrieval_.
 McGraw-Hill, Inc., New York, NY, USA.
 
-Sørensen T (1948). “A Method of Establishing Groups of Equal Amplitude in Plant Sociology
+Sorensen T (1948). "A Method of Establishing Groups of Equal Amplitude in Plant Sociology
 Based on Similarity of Species Content and Its Application to Analyses of the Vegetation
-on Danish Commons.” _Biologiske Skrifter_, *5*, pp. 1-34.
+on Danish Commons." _Biologiske Skrifter_, *5*, pp. 1-34.
 
-Zhou T, Lü L and Zhang Y (2009). “Predicting missing links via local information.” _The
+Zhou T, Lu L and Zhang Y (2009). "Predicting missing links via local information." _The
 European Physical Journal B_, *71*(4), pp. 623-630.
 }
