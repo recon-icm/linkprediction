@@ -34,7 +34,7 @@ As we will be discussing computing of proximity measures in a given graph $G$, w
 
 - An *adjacency matrix* of $G$ is a matrix $A = [a_{xy}]_{N\times N}$ such that $a_{xy} = 1$ if $(x, y) \in E$ otherwise $a_{xy} = 0$.
 - A *set of neighbors* of vertex $x$ in graph $G$ is $\Gamma(x)$, namely $\Gamma(x) = \{y: (x, y) \in E\}$.
-- $k_x$ degree of $x$ ?????????????
+- $k_x$ is the *degree* of vertex $x$ in graph $G$
 - *Proximity measure* $s_{xy}$ is a function $s_{xy}: G, x, y \mapsto \Re$.
 
 Other notation will be introduced below when needed.
