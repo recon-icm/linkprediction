@@ -42,7 +42,11 @@ coerce_result <- function(result, value, graph){
     return(result)
   if (value == "edgelist"){
     ind <- c(result > 0)
-    edges <- expand.grid(rownames(result), colnames(result))[ind, ]
+    edges <- expand.grid(
+      as.numeric(rownames(result)), 
+      as.numeric(colnames(result)), 
+      stringsAsFactors = FALSE
+      )[ind, ]
     names(edges) <- c("from", "to")
     edges$value <- c(result)[ind]
     rownames(edges) <- NULL
