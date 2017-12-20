@@ -83,6 +83,17 @@ package="linkprediction")} for more details and formal definitions):
 \item{\code{sor}}{sorensen index/dice coefficient (Sorensen 1948)}
 }
 }
+\examples{
+if(requireNamespace("igraph")) {
+  g <- igraph::make_graph(~ A -- C:D:E -- B -- F -- G:H -- I)
+  
+# Adamic-Adar
+proxfun(g, method="aa", value="edgelist")
+  
+# Random Walk with Restart
+proxfun(g, method="rwr", value="edgelist")
+}
+}
 \references{
 Adamic L and Adar E (2001). "Friends and Neighbors on the Web." \emph{Social Networks}, \emph{25},
 pp. 211-230.
