@@ -23,7 +23,7 @@
 #' package="linkprediction")} for more details and formal definitions):
 #'
 #' \describe{
-#'  \item{\code{aa}}{Adamic-Adar index  (Adamic and Adar 2001)}
+#'  \item{\code{aa}}{Adamic-Adar index  (Adamic and Adar 2001). Additional arguments are passed to [igraph::similarity].}
 #'  \item{\code{act}}{Average Commute Time (Fouss, Pirotte, Renders, and Saerens 2007)}
 #'  \item{\code{act_n}}{Normalized Average Commute Time (Fouss et al. 2007)}
 #'  \item{\code{cn}}{Common Neighbours}
@@ -41,11 +41,9 @@
 #'  \item{\code{mf}}{Matrix Forest Index (Chebotarev P. Yu. 1997)}
 #'  \item{\code{pa}}{preferential attachment (Barabasi and Albert 1999)}
 #'  \item{\code{ra}}{resource allocation (Zhou et al. 2009)}
-#'  \item{\code{rwr}}{random walk with restart (Brin and Page 1998)}
+#'  \item{\code{rwr}}{random walk with restart (Brin and Page 1998). Additional argument `alpha` (default value 0.3) is the probability that the walk will restart after a step.}
 #'  \item{\code{sor}}{sorensen index/dice coefficient (Sorensen 1948)}
 #' }
-#' 
-#' Consult the vignette `proxfun` for further details.
 #'
 #'
 #'
