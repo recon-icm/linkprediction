@@ -95,7 +95,7 @@ proxfun(g, method="rwr", value="edgelist")
 }
 }
 \references{
-Adamic L and Adar E (2001). "Friends and Neighbors on the Web." \emph{Social Networks}, \emph{25},
+Adamic L and Adar E (2003). "Friends and Neighbors on the Web." \emph{Social Networks}, \emph{25},
 pp. 211-230.
 
 Barabasi A and Albert R (1999). "Emergence of Scaling in Random Networks." \emph{Science},

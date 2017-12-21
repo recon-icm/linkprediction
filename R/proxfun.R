@@ -65,7 +65,7 @@
 #' attribute "weight" indicates similarity score.
 #'   
 #' @references 
-#' Adamic L and Adar E (2001). "Friends and Neighbors on the Web." _Social Networks_, *25*,
+#' Adamic L and Adar E (2003). "Friends and Neighbors on the Web." _Social Networks_, *25*,
 #' pp. 211-230.
 #' 
 #' Barabasi A and Albert R (1999). "Emergence of Scaling in Random Networks." _Science_,
