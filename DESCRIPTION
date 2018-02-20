@@ -11,7 +11,7 @@ Description: Implementations of most of the existing proximity-based methods of
   Adamic L. and Adar E. (2003) <doi:10.1016/S0378-8733(03)00009-1>,
   Leicht E., Holme P., Newman M. (2006) <doi:10.1103/PhysRevE.73.026120>,
   Zhou T. and Zhang Y (2009) <doi:10.1140/epjb/e2009-00335-8>, and
-  Fouss F., Pirotte A., Renders J., and Saerens M. (2007) <doi:10.1109/TKDE.2007.46>
+  Fouss F., Pirotte A., Renders J., and Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.
 Depends:
     R (>= 3.1.1),
 License: MIT + file LICENSE
