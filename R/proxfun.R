@@ -66,7 +66,7 @@
 #'   
 #' @references 
 #' Adamic L and Adar E (2003). "Friends and Neighbors on the Web." _Social Networks_, *25*,
-#' pp. 211-230.
+#' pp. 211-230 <doi:10.1016/S0378-8733(03)00009-1>.
 #' 
 #' Barabasi A and Albert R (1999). "Emergence of Scaling in Random Networks." _Science_,
 #' *286*(5439), pp. 509-512.
@@ -80,7 +80,7 @@
 #' 
 #' Fouss F, Pirotte A, Renders J and Saerens M (2007). "Random-Walk Computation of
 #' Similarities Between Nodes of a Graph with Application to Collaborative Recommendation."
-#' _IEEE Transactions on Knowledge and Data Engineering_, *19*(3), pp. 355-369.
+#' _IEEE Transactions on Knowledge and Data Engineering_, *19*(3), pp. 355-369 <doi:10.1109/TKDE.2007.46>.
 #' 
 #' Jaccard P (1912). "The Distribution of the Flora in the Alpine Zone 1" _New
 #' Phytologist_, *11*(2), pp. 37-50.
@@ -89,7 +89,7 @@
 #' *18*(1), pp. 39-43.
 #' 
 #' Leicht EA, Holme P and Newman MEJ (2006). "Vertex similarity in networks." _Phys. Rev.
-#' E_, *73*(2), pp. 026120.
+#' E_, *73*(2), pp. 026120 <doi:10.1103/PhysRevE.73.026120>.
 #' 
 #' Ravasz E, Somera AL, Mongru DA, Oltvai ZN and Barabasi A (2002). "Hierarchical
 #' Organization of Modularity in Metabolic Networks." _Science_, *297*(5586), pp. 1551-1555.
@@ -102,7 +102,7 @@
 #' on Danish Commons." _Biologiske Skrifter_, *5*, pp. 1-34.
 #' 
 #' Zhou T, Lu L and Zhang Y (2009). "Predicting missing links via local information." _The
-#' European Physical Journal B_, *71*(4), pp. 623-630.
+#' European Physical Journal B_, *71*(4), pp. 623-630 <doi:10.1140/epjb/e2009-00335-8>.
 #'
 #' @export
 #' @encoding UTF-8
