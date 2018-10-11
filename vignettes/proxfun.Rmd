@@ -286,3 +286,10 @@ where $\epsilon$ is a free parameter. This measure benefits from more informatio
 
 
 # References
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({  "HTML-CSS": { minScaleAdjust: 125, availableFonts: [] }  });
+</script>
+
+
+
