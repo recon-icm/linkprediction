@@ -96,7 +96,7 @@ proxfun(g, method="rwr", value="edgelist")
 }
 \references{
 Adamic L and Adar E (2003). "Friends and Neighbors on the Web." \emph{Social Networks}, \emph{25},
-pp. 211-230 \url{doi:10.1016/S0378-8733(03)00009-1}.
+pp. 211-230 \doi{10.1016/S0378-8733(03)00009-1}.
 
 Barabasi A and Albert R (1999). "Emergence of Scaling in Random Networks." \emph{Science},
 \emph{286}(5439), pp. 509-512.
@@ -110,7 +110,7 @@ social groups ." _Automation and Remote Control _, \emph{58}(9), pp. 1505-1514.
 
 Fouss F, Pirotte A, Renders J and Saerens M (2007). "Random-Walk Computation of
 Similarities Between Nodes of a Graph with Application to Collaborative Recommendation."
-\emph{IEEE Transactions on Knowledge and Data Engineering}, \emph{19}(3), pp. 355-369 \url{doi:10.1109/TKDE.2007.46}.
+\emph{IEEE Transactions on Knowledge and Data Engineering}, \emph{19}(3), pp. 355-369 \doi{10.1109/TKDE.2007.46}.
 
 Jaccard P (1912). "The Distribution of the Flora in the Alpine Zone 1" \emph{New
 Phytologist}, \emph{11}(2), pp. 37-50.
@@ -119,7 +119,7 @@ Katz L (1953). "A new status index derived from sociometric analysis." \emph{Psy
 \emph{18}(1), pp. 39-43.
 
 Leicht EA, Holme P and Newman MEJ (2006). "Vertex similarity in networks." \emph{Phys. Rev.
-E}, \emph{73}(2), pp. 026120 \url{doi:10.1103/PhysRevE.73.026120}.
+E}, \emph{73}(2), pp. 026120 \doi{10.1103/PhysRevE.73.026120}.
 
 Ravasz E, Somera AL, Mongru DA, Oltvai ZN and Barabasi A (2002). "Hierarchical
 Organization of Modularity in Metabolic Networks." \emph{Science}, \emph{297}(5586), pp. 1551-1555.
@@ -132,5 +132,5 @@ Based on Similarity of Species Content and Its Application to Analyses of the Ve
 on Danish Commons." \emph{Biologiske Skrifter}, \emph{5}, pp. 1-34.
 
 Zhou T, Lu L and Zhang Y (2009). "Predicting missing links via local information." \emph{The
-European Physical Journal B}, \emph{71}(4), pp. 623-630 \url{doi:10.1140/epjb/e2009-00335-8}.
+European Physical Journal B}, \emph{71}(4), pp. 623-630 \doi{10.1140/epjb/e2009-00335-8}.
 }
