@@ -1,8 +1,8 @@
 ---
 title: "Proximity-based Methods for Link Prediction"
 author:
-  - Bartosz Chroł (ICM UW)
-  - Michał Bojanowski (ICM UW)
+  - Bartosz Chroł (ICM, University of Warsaw)
+  - Michał Bojanowski (Kozminski University)
 institute: "ICM UW"
 date: "`r Sys.Date()`"
 bibliography: refs.bib
@@ -283,9 +283,14 @@ S=A^2+\epsilon A^3,
 \]
 where $\epsilon$ is a free parameter. This measure benefits from more information than simple common neighbours, as it looks on neighbours of second order, but at the same time is still fairly inexpensive to compute.
 
+# Acknowledgements {-}
 
+Authors thank (Polish) [National Science Centre](https://ncn.gov.pl) for
+support through SONATA grant 2012/07/D/HS6/01971 for the project *Dynamics of
+Competition and Collaboration  in Science: Individual Strategies, Collaboration
+Networks, and Organizational Hierarchies* (http://recon.icm.edu.pl).
 
-# References
+# References {-}
 
 <script type="text/x-mathjax-config">
    MathJax.Hub.Config({  "HTML-CSS": { minScaleAdjust: 125, availableFonts: [] }  });
