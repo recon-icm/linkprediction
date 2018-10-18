@@ -27,3 +27,4 @@ VignetteBuilder: knitr
 BugReports: https://github.com/recon-icm/linkprediction/issues
 URL: https://github.com/recon-icm/linkprediction
 Roxygen: list(markdown=TRUE)
+Encoding: UTF-8
