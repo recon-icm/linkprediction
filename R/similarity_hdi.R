@@ -12,6 +12,6 @@ similarity_hdi <- function(graph, v1, v2, ...){
 
   score <- igraph::cocitation(graph, v = v1)
   score <- score[, v2]
-  score <- score / outer(deg[v1], deg[v2], pmin)
+  score <- score / outer(deg[v1], deg[v2], pmax)
   score
 }
