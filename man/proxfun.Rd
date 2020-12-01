@@ -9,11 +9,23 @@
 \usage{
 proxfun(graph, ...)
 
-\method{proxfun}{igraph}(graph, method, v1 = NULL, v2 = v1,
-  value = c("matrix", "edgelist", "graph"), ...)
+\method{proxfun}{igraph}(
+  graph,
+  method,
+  v1 = NULL,
+  v2 = v1,
+  value = c("matrix", "edgelist", "graph"),
+  ...
+)
 
-\method{proxfun}{network}(graph, method, v1 = NULL, v2 = v1,
-  value = c("matrix", "edgelist", "graph"), ...)
+\method{proxfun}{network}(
+  graph,
+  method,
+  v1 = NULL,
+  v2 = v1,
+  value = c("matrix", "edgelist", "graph"),
+  ...
+)
 }
 \arguments{
 \item{graph}{an object of class \code{igraph} or \code{network}}

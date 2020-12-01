@@ -4,8 +4,8 @@
 \name{uw}
 \alias{uw}
 \title{University of Warsaw co-authorship network}
-\format{An \code{igraph} object with undirected graph with 1486 vertices and 7505
-edges, and the following attributes:
+\format{
+An \code{igraph} object with undirected graph with 1486 vertices and 7505 edges, and the following attributes:
 \itemize{
 \item \code{affiliation} -- Vertex attribute identifying groups of departments:
 natural sciences, social sciences, humanities, other (other departments of
@@ -16,7 +16,8 @@ to the \code{affiliation} attribute.
 that edge co-authored at least one publication in period 1.
 \item \code{p2} -- Logical edge attribute. It is \code{TRUE} if researchers incident on
 that edge co-authored at least one publication in period 2.
-}}
+}
+}
 \source{
 Polish Scholarly Bibliography \url{https://pbn.nauka.gov.pl}.
 }

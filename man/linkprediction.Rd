@@ -3,7 +3,6 @@
 \docType{package}
 \name{linkprediction}
 \alias{linkprediction}
-\alias{linkprediction-package}
 \title{Link Prediction Methods}
 \description{
 Implements most of existing methods proximity-based methods of link
