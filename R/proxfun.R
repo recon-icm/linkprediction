@@ -123,9 +123,8 @@ proxfun <- function(graph, ...){
 }
 
 
-#' @method proxfun igraph
-#' @export
 #' @rdname proxfun
+#' @export
 proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
                            value =c("matrix", "edgelist", "graph"), ...){
   # temporary issue - break code if graph is directed or disconnected until
@@ -151,9 +150,8 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
 }
 
 
-#' @method proxfun network
-#' @export
 #' @rdname proxfun
+#' @export
 proxfun.network <- function(graph, method, v1 = NULL, v2 = v1,
                             value =c("matrix", "edgelist", "graph"), ...){
   graph <- intergraph::asIgraph(graph)
