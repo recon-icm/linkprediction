@@ -11,8 +11,7 @@
 #' @docType data
 #' @name uw
 #'
-#' @format An `igraph` object with undirected graph with 1486 vertices and 7505
-#'   edges, and the following attributes:
+#' @format An `igraph` object with undirected graph with `r igraph::vcount(uw)` vertices and `r igraph::ecount(uw)` edges, and the following attributes:
 #'   
 #'   - `affiliation` -- Vertex attribute identifying groups of departments:
 #'   natural sciences, social sciences, humanities, other (other departments of
