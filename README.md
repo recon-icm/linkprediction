@@ -13,10 +13,18 @@ Proximity-based methods of link prediction.
 
 ## Installation
 
-Using [devtools](https://github.com/hadley/devtools):
+Install released version from CRAN with:
 
 ```r
-devtools::install_github("recon-icm/linkprediction")
+install.packages("linkprediction")
+
+```
+
+or the development version from GitHub with:
+
+```r
+# install.packages("remotes")
+remotes::install_github("recon-icm/linkprediction")
 ```
 
 
