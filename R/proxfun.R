@@ -49,9 +49,9 @@
 #'
 #' @return 
 #' If \code{value = "matrix"} a matrix with \code{length(v1)} rows and
-#' \code{length(v2)} with \code{rownames} and \code{colnames} equal to \code{v1}
-#' and \code{v2} respectively. If \code{value = "edgelist"} a \code{data.frame}
-#' with three columns:
+#' \code{length(v2)} with \code{rownames} and \code{colnames} equal to integer
+#' node IDs. If \code{value = "edgelist"} a \code{data.frame} with three
+#' columns:
 #' \describe{
 #'  \item{from}{ID of a start node of an edge}
 #'  \item{to}{ID of an end node of an edge}
