@@ -1,5 +1,4 @@
-context("Testing Adamic-Adar")
-
+# Testing Adamic-Adar -----------------------------------------------------
 
 test_that("AA works correctly for a line network", {
   g <- igraph::make_graph(~ a -- b -- c)

@@ -1,4 +1,5 @@
-context("Checking if 'proxfun' handles argument correctly")
+# Checking if 'proxfun' handles argument correctly ------------------------
+
 
 g <- igraph::graph(c(1,2, 1,3, 1,4, 2,4, 1,5, 2,5, 4,5), directed = FALSE)
 igraph::V(g)$name <- letters[5:1]
@@ -34,8 +35,7 @@ test_that("Error is thrown for directed networks", {
 
 
 
-
-context("Check if `proxfun` return proper objects")
+# Check if `proxfun` return proper objects --------------------------------
 
 all_methods <- c("act", "act_n", "aa", "cn", "cos", "cos_l",
                  "dist", "hdi", "hpi", "jaccard", "katz", "l",
