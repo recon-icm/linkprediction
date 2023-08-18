@@ -2,7 +2,8 @@ Package: linkprediction
 Title: Link Prediction Methods
 Version: 1.0-1
 Authors@R: c( 
-  person( "Michal", "Bojanowski", email="michal2992@gmail.com", role=c("aut", "cre")), 
+  person( "Michal", "Bojanowski", email="michal2992@gmail.com", 
+    role=c("aut", "cre"), comment=c(ORCID="0000-0001-7503-852X")), 
   person("Bartosz", "Chrol", email="bartek.chrol@gmail.com", role=c("aut")),
   person(family="National Science Centre", role="fnd", comment="grant 2012/07/D/HS6/01971")
   )
