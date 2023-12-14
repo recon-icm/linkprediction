@@ -18,9 +18,9 @@ Depends:
 License: MIT + file LICENSE
 LazyData: true
 Imports:
-    igraph,
-    intergraph
+    igraph
 Suggests:
+  integraph,
   knitr,
   testthat
 RoxygenNote: 7.1.1
