@@ -20,7 +20,7 @@ LazyData: true
 Imports:
     igraph
 Suggests:
-  integraph,
+  intergraph,
   knitr,
   testthat
 RoxygenNote: 7.1.1
