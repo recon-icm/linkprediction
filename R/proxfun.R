@@ -154,6 +154,10 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
 #' @export
 proxfun.network <- function(graph, method, v1 = NULL, v2 = v1,
                             value =c("matrix", "edgelist", "graph"), ...){
+  if(!requireNamespace("intergraph")) {
+    stop("Install package 'intergraph' to work with other types of objects",
+         call. = FALSE)
+  }
   graph <- intergraph::asIgraph(graph)
   proxfun.igraph(graph, method = method , v1 = v1, v2 = v2, value = value, ...)
 }
