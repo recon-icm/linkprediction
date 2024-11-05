@@ -11,7 +11,7 @@
 #
 
 similarity_dist <- function(graph, v1, v2, ...){
-  score <- igraph::shortest.paths(graph, v = v1, to = v2)
+  score <- igraph::distances(graph, v = v1, to = v2)
   score[is.infinite(score)] <- igraph::vcount(graph) + 1
   # maybe infinity here ?
   score <- 1 / score

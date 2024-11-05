@@ -10,7 +10,7 @@
 #
 
 similarity_rwr <- function(graph, v1, v2, alpha = 0.3, ...){
-  P <- as.matrix(igraph::get.stochastic(graph))
+  P <- as.matrix(igraph::stochastic_matrix(graph))
   score <- solve(diag(nrow(P)) - (1 - alpha) * t(P))
   score <- score * alpha
   score <- score + t(score)

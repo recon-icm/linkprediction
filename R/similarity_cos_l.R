@@ -7,7 +7,7 @@
 #
 
 similarity_cos_l <- function(graph, v1, v2, ...){
-  L <- igraph::graph.laplacian(graph)
+  L <- igraph::laplacian_matrix(graph)
   n <- igraph::vcount(graph)
   m <- igraph::ecount(graph)
 

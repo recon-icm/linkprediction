@@ -8,7 +8,7 @@
 #
 
 similarity_mf <- function(graph, v1, v2, ...){
-  L <- igraph::graph.laplacian(graph)
+  L <- igraph::laplacian_matrix(graph)
   n <- igraph::vcount(graph)
 
   score <- solve(diag(n) + L)

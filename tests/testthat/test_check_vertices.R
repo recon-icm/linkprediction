@@ -1,4 +1,4 @@
-g <- igraph::graph(c(1,2, 1,3, 1,4, 2,4, 1,5, 2,5, 4,5), directed = FALSE)
+g <- igraph::make_graph(c(1,2, 1,3, 1,4, 2,4, 1,5, 2,5, 4,5), directed = FALSE)
 igraph::V(g)$name <- letters[5:1]
 check_vertices <- linkprediction:::check_vertices
 

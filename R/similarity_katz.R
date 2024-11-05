@@ -7,7 +7,7 @@
 #
 
 similarity_katz <- function(graph, v1, v2, beta = 0.001, ...){
-  A  <- igraph::get.adjacency(graph)
+  A  <- igraph::as_adjacency_matrix(graph)
   #I <- Diagonal(nrow(A))
   I <- diag(nrow(A))
   tmp <- I - beta * A

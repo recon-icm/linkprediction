@@ -129,7 +129,7 @@ proxfun.igraph <- function(graph, method, v1 = NULL, v2 = v1,
                            value =c("matrix", "edgelist", "graph"), ...){
   # temporary issue - break code if graph is directed or disconnected until
   # proper functions are implemented
-  if (igraph::is.directed(graph) | !igraph::is.connected(graph))
+  if (igraph::is_directed(graph) | !igraph::is_connected(graph))
     stop("graph has to be undirected and connected")
 
   value <- match.arg(value)

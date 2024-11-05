@@ -8,9 +8,9 @@
 #
 
 similarity_lhn_global <- function(graph, v1, v2, theta = 0.5, ...){
-  lambda <- igraph::graph.eigen(graph)$value
+  lambda <- igraph::spectrum(graph)$value
   deg <- igraph::degree(graph)
-  A <- igraph::get.adjacency(graph)
+  A <- igraph::as_adjacency_matrix(graph)
   #I <- Diagonal(nrow(adj))
   I <- diag(nrow(A))
   tmp <- I - (theta / lambda) * A

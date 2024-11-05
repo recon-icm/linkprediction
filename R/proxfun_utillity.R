@@ -21,7 +21,7 @@ check_vertices <- function(graph, v){
       stop("Vertex id out of range")
     v
   } else if (is.character(v)){
-    if (!igraph::is.named(graph))
+    if (!igraph::is_named(graph))
       stop("Graph does not have vertex names. Provide vertex IDs")
     v <- match(v, igraph::V(graph)$name)
     if (any(is.na(v)))
@@ -61,10 +61,10 @@ coerce_result <- function(result, value, graph){
     result <- result[order(as.numeric(rownames(result))),
                      order(as.numeric(colnames(result)))]
     # create weighted graph
-    g <- igraph::graph.adjacency(result, weighted = TRUE, add.colnames = NA,
-                         mode = ifelse(igraph::is.directed(graph), "directed", "undirected"))
+    g <- igraph::graph_from_adjacency_matrix(result, weighted = TRUE, add.colnames = NA,
+                         mode = ifelse(igraph::is_directed(graph), "directed", "undirected"))
     # empty original graph and add weighted graph to preserve structure
-    g <- igraph::graph.union(igraph::delete.edges(graph, igraph::E(graph)), g,
+    g <- igraph::union(igraph::delete_edges(graph, igraph::E(graph)), g,
                      byname = FALSE)
     return(g)
   }
