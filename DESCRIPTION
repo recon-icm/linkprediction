@@ -24,7 +24,7 @@ Suggests:
   knitr,
   rmarkdown,
   testthat
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 BugReports: https://github.com/recon-icm/linkprediction/issues
 URL: https://github.com/recon-icm/linkprediction
